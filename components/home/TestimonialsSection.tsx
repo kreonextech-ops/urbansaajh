@@ -7,39 +7,48 @@ import { ChevronLeft, ChevronRight, Quote } from "lucide-react";
 const testimonials = [
   {
     id: 1,
-    name: "Arjun & Neha Malhotra",
-    role: "Homeowners",
+    name: "Sudeep & Sharmila Chatterjee",
+    role: "Homeowners, Siliguri",
     quote:
-      "Urban Saajh didn't just design our home — they designed our life. Every corner speaks to us. Priya and her team listened to our wildest dreams and turned them into our everyday reality. We are beyond words.",
-    image: "https://images.unsplash.com/photo-1606787366850-de6330128bfc?w=200&q=80",
-    project: "The Ivory Residence",
+      "Tejinder has an incredible eye for detail. Our villa in Siliguri feels like a sanctuary. He managed to blend our traditional Bengali heritage with a modern, sleek aesthetic that we absolutely love.",
+    image: "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=200&q=80",
+    project: "The Heritage Villa",
   },
   {
     id: 2,
-    name: "Ritu Kapoor",
-    role: "CEO, Kapoor Industries, Mumbai",
+    name: "Dr. Anirban Das",
+    role: "Medical Director, Bagdogra",
     quote:
-      "Our new office has transformed how my team feels about coming to work. The design elevated our brand identity in a way we never imagined possible. Urban Saajh truly understands the intersection of aesthetics and function.",
-    image: "https://images.unsplash.com/photo-1580489944761-15a19d654956?w=200&q=80",
-    project: "Kapoor Industries HQ",
+      "Designing a clinic that feels professional yet warm is a challenge. Urban Saajh exceeded my expectations. The space planning in our Bagdogra facility is remarkably efficient and world-class in its aesthetic.",
+    image: "https://images.unsplash.com/photo-1566492031773-4f4e44671857?w=200&q=80",
+    project: "Lifeline Wellness Centre",
   },
   {
     id: 3,
-    name: "Vikram & Ananya Nair",
-    role: "Homeowners, Bengaluru",
+    name: "Pallavi Sen",
+    role: "Entrepreneur, Darjeeling",
     quote:
-      "We had a vision, but no idea how to bring it to life. Urban Saajh took our scattered ideas and wove them into something coherent, elegant, and deeply personal. Working with Priya was the best decision we made.",
-    image: "https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?w=200&q=80",
-    project: "Silk & Stone Penthouse",
+      "Working with Tejinder was a seamless experience. He is patient, transparent, and truly visionary. My apartment in Darjeeling is now the talk of my social circle. Truly bespoke design with soul!",
+    image: "https://images.unsplash.com/photo-1567532939604-b6b5b0db2604?w=200&q=80",
+    project: "Cloud Nine Apartment",
   },
   {
     id: 4,
-    name: "Meera Subramaniam",
-    role: "Boutique Hotel Owner, Udaipur",
+    name: "Ayan & Barnali Banerjee",
+    role: "Homeowners, Kurseong",
     quote:
-      "Our guests constantly ask who designed the hotel. Urban Saajh gave us an identity — a feeling that is uniquely ours. Bookings have doubled since the redesign. This is the power of great design.",
-    image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=200&q=80",
-    project: "The Onyx Suite",
+      "From the first 3D render to the final handover, the transparency was refreshing. They respected our budget while delivering a luxury finish that feels twice its cost. Highly recommend for anyone in the hills.",
+    image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=200&q=80",
+    project: "Mountain Mist Retreat",
+  },
+  {
+    id: 5,
+    name: "Rajat & Ishita Mukherjee",
+    role: "Creative Directors, Siliguri",
+    quote:
+      "The 'Design Journey' is real. Urban Saajh transformed our ancestral home into a contemporary masterpiece without losing its soul. Meticulous execution and brilliant craftsmanship from start to finish.",
+    image: "https://images.unsplash.com/photo-1554151228-14d9def656e4?w=200&q=80",
+    project: "The Ancestral Revival",
   },
 ];
 
