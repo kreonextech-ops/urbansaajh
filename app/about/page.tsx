@@ -36,7 +36,7 @@ export default function AboutPage() {
         label="Our Story"
         title="About Urban Saajh"
         subtitle="Born from passion. Built on purpose. Defined by beauty."
-        image="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=1600&q=85"
+        image="/images/europa/Staircase.jpg"
       />
 
 
@@ -125,13 +125,13 @@ export default function AboutPage() {
           <Reveal delay={150}>
             <div className="relative h-[520px]">
               <img
-                src="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?w=700&q=80"
-                alt="Interior craftsmanship"
+                src="/images/europa/Living 2.jpg"
+                alt="Interior craftsmanship render"
                 className="absolute top-0 left-0 w-[65%] h-[70%] object-cover"
               />
               <img
-                src="https://images.unsplash.com/photo-1631679706909-1844bbd07221?w=700&q=80"
-                alt="Elegant bedroom"
+                src="/images/europa/Master Bedroom 2.jpg"
+                alt="Elegant bedroom design"
                 className="absolute bottom-0 right-0 w-[60%] h-[60%] object-cover border-4 border-espresso"
               />
               <div className="absolute bottom-[38%] left-[40%] w-[25%] h-[25%] bg-gold/10 border border-gold/30" />
