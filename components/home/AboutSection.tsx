@@ -63,22 +63,22 @@ export default function AboutSection() {
           <div className="grid grid-cols-2 gap-3 h-[520px]">
             <div className="relative overflow-hidden row-span-2">
               <img
-                src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=600&q=80"
-                alt="Luxury living room"
+                src="/images/europa/Living 1.jpg"
+                alt="Luxury living room render"
                 className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
               />
             </div>
             <div className="relative overflow-hidden">
               <img
-                src="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?w=600&q=80"
-                alt="Modern interior"
+                src="/images/europa/Dining 1.jpg"
+                alt="Modern dining interior"
                 className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
               />
             </div>
             <div className="relative overflow-hidden">
               <img
-                src="https://images.unsplash.com/photo-1631679706909-1844bbd07221?w=600&q=80"
-                alt="Elegant bedroom"
+                src="/images/europa/Master Bedroom 1.jpg"
+                alt="Elegant bedroom design"
                 className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
               />
             </div>
