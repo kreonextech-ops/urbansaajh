@@ -20,7 +20,6 @@ export default function Hero() {
         loop
         muted
         playsInline
-        poster="/images/hero-poster.png"
         className="absolute inset-0 w-full h-full object-cover transition-transform duration-[10000ms] ease-out"
         style={{
           transform: loaded ? "scale(1.05)" : "scale(1.12)",
