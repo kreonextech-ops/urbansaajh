@@ -155,8 +155,11 @@ export default function ProcessPage() {
       <section className="bg-warm-white py-20 lg:py-24">
         <div className="max-w-3xl mx-auto px-6 lg:px-12 text-center">
           <Reveal>
+            <h3 className="font-italiana text-2xl lg:text-3xl text-espresso mb-4 tracking-wide">
+              Urban Saajh by Tejinder Singh Bhogal
+            </h3>
             <p className="font-cormorant text-2xl lg:text-3xl italic text-espresso/80 leading-relaxed">
-              Good design doesn't happen by accident. It's the result of a thoughtful, structured process — one where every decision is intentional and every detail is considered.
+              Where vision meets precision, and spaces are crafted to reflect status, sophistication, and soul.
             </p>
           </Reveal>
           <Reveal delay={200}>
