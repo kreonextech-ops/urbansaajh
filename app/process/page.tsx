@@ -82,7 +82,7 @@ const phases = [
       "Interactive 360 views (optional)",
     ],
     deliverable: "A complete photorealistic preview of your future environment.",
-    image: "/images/europa/lounge Room 4.jpg",
+    image: "/images/europa/Check 6.jpg.jpeg",
   },
   {
     number: "05",
