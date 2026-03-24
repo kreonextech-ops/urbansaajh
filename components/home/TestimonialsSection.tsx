@@ -94,19 +94,11 @@ export default function TestimonialsSection() {
               </blockquote>
 
               {/* Client info */}
-              <div className="flex flex-col items-center gap-3">
-                <img
-                  src={t.image}
-                  alt={t.name}
-                  className="w-14 h-14 rounded-full object-cover border-2 border-gold"
-                />
+              <div className="flex flex-col items-center gap-1">
                 <div>
                   <p className="font-italiana text-xl text-espresso tracking-wide">{t.name}</p>
                   <p className="font-dm text-[10px] tracking-ultra-wide uppercase text-taupe-dark mt-0.5">
                     {t.role}
-                  </p>
-                  <p className="font-cormorant text-sm italic text-gold mt-1">
-                    Project: {t.project}
                   </p>
                 </div>
               </div>
