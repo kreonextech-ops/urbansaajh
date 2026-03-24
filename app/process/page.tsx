@@ -34,7 +34,7 @@ const phases = [
       "Brief finalization",
     ],
     deliverable: "A deeply personal design brief rooted in your lifestyle.",
-    image: "https://images.unsplash.com/photo-1593642634315-48f5414c3ad9?w=800&q=80",
+    image: "/images/europa/Check 5.jpg.jpeg",
   },
   {
     number: "02",
@@ -50,7 +50,7 @@ const phases = [
       "Concept mood boards",
     ],
     deliverable: "A cohesive design identity with curated material palettes.",
-    image: "https://images.unsplash.com/photo-1618219908412-a29a1bb7b86e?w=800&q=80",
+    image: "/images/europa/Kitchen 1.jpg",
   },
   {
     number: "03",
@@ -66,7 +66,7 @@ const phases = [
       "Zoning & functional mapping",
     ],
     deliverable: "Technically detailed and spatially optimized floor plans.",
-    image: "https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?w=800&q=80",
+    image: "/images/europa/Living 2.jpg",
   },
   {
     number: "04",
@@ -82,7 +82,7 @@ const phases = [
       "Interactive 360 views (optional)",
     ],
     deliverable: "A complete photorealistic preview of your future environment.",
-    image: "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=800&q=80",
+    image: "/images/europa/lounge Room 4.jpg",
   },
   {
     number: "05",
@@ -98,7 +98,7 @@ const phases = [
       "Financial milestone planning",
     ],
     deliverable: "A structured investment plan with complete financial clarity.",
-    image: "https://images.unsplash.com/photo-1600210492493-0946911123ea?w=800&q=80",
+    image: "/images/europa/Dining 1.jpg",
   },
   {
     number: "06",
@@ -114,7 +114,7 @@ const phases = [
       "Final flawless handover",
     ],
     deliverable: "A timeless, elevated space delivered with absolute precision.",
-    image: "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=800&q=80",
+    image: "/images/europa/Master Bedroom 3.jpg",
   },
 ];
 
