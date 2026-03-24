@@ -7,45 +7,39 @@ import { ArrowRight } from "lucide-react";
 const steps = [
   {
     number: "01",
-    title: "Discovery & Vision",
+    title: "Vision Alignment",
     description:
-      "Our journey begins with you. A deep-dive consultation to understand your lifestyle, aspirations, and the story you want your space to tell.",
-    detail: "1–2 weeks",
+      "We engage in an in-depth consultation to understand your lifestyle, aspirations, and long-term vision — ensuring the foundation of the project is deeply personal.",
   },
   {
     number: "02",
-    title: "Concept Design",
+    title: "Concept Curation",
     description:
-      "We translate insights into visual concepts — mood boards, material palettes, spatial layouts, and the design language that will define your space.",
-    detail: "2–3 weeks",
+      "We translate your vision into a distinctive design language. From spatial philosophy to material direction, a cohesive concept is curated to define your space.",
   },
   {
     number: "03",
-    title: "Design Development",
+    title: "Precision Space Planning",
     description:
-      "Detailed floor plans, 3D visualizations, and refined material selections bring the concept to life with precision and clarity.",
-    detail: "3–4 weeks",
+      "We develop technically detailed and thoughtfully optimized floor plans that maximize flow, proportion, and harmony while maintaining architectural integrity.",
   },
   {
     number: "04",
-    title: "Sourcing & Procurement",
+    title: "Immersive 3D Visualization",
     description:
-      "We curate and procure every element — furniture, fixtures, art, and accessories — from trusted artisans and premium suppliers globally.",
-    detail: "4–6 weeks",
+      "Experience your space before it is built. Through high-quality 3D renders, we bring textures, materials, and lighting together with complete confidence.",
   },
   {
     number: "05",
-    title: "Execution & Installation",
+    title: "Transparent Investment Planning",
     description:
-      "Our skilled project managers oversee every detail of construction and installation, ensuring flawless quality at every stage.",
-    detail: "6–12 weeks",
+      "We provide a structured budget plan, detailing materials, finishes, and scope — ensuring financial transparency without compromising excellence.",
   },
   {
     number: "06",
-    title: "The Grand Reveal",
+    title: "Flawless Execution & Delivery",
     description:
-      "A white-glove handover — your space, fully styled and perfected, ready for you to walk in and fall in love.",
-    detail: "Final week",
+      "With meticulous site supervision and refined craftsmanship, we transform concept into reality — delivering a space that is timeless and elevated.",
   },
 ];
 
@@ -63,7 +57,7 @@ export default function ProcessSection() {
               <h2 className="font-italiana text-5xl lg:text-6xl text-espresso tracking-wide leading-tight">
                 Our Design
                 <br />
-                <span className="font-cormorant italic font-light text-taupe-dark">Process</span>
+                <span className="font-cormorant italic font-light text-taupe-dark">Journey</span>
               </h2>
             </Reveal>
           </div>

@@ -4,122 +4,116 @@ import { PageHero, Reveal, SectionLabel } from "@/components/ui/shared";
 import { ArrowRight } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Our Design Process | Interior Designer Bagdogra & Siliguri",
+  title: "Our Design Journey | Interior Designer Bagdogra & Siliguri",
   description:
-    "Discover Urban Saajh's transparent, step-by-step interior design process — from discovery to grand reveal. Trusted by clients in Bagdogra, Siliguri, Darjeeling, Kurseong, Kalimpong, and Sikkim.",
+    "Explore Urban Saajh's transparent, step-by-step interior design journey — from vision alignment to flawless execution. Trusted by clients in Bagdogra, Siliguri, Darjeeling, and the hills.",
   keywords: [
-    "interior design process Bagdogra", "interior design process Siliguri",
-    "how interior design works North Bengal", "interior designer process Darjeeling",
-    "turnkey interior design process", "Urban Saajh design process",
-    "interior project timeline Siliguri", "best interior design process North Bengal hills",
+    "interior design journey Bagdogra", "interior design process Siliguri",
+    "how interior design works North Bengal", "interior designer journey Darjeeling",
+    "turnkey interior design journey", "Urban Saajh design journey",
+    "interior project timeline Siliguri", "best interior design journey North Bengal hills",
   ],
   openGraph: {
-    title: "Our Design Process | Urban Saajh — Bagdogra & Siliguri Interior Design",
-    description: "Transparent, structured interior design process from discovery to grand reveal. Serving Bagdogra, Siliguri, Darjeeling, and the North Bengal hills.",
+    title: "Our Design Journey | Urban Saajh — Bagdogra & Siliguri Interior Design",
+    description: "Transparent, structured interior design journey from vision alignment to flawless execution. Serving Bagdogra, Siliguri, Darjeeling, and the North Bengal hills.",
   },
 };
 
 const phases = [
   {
     number: "01",
-    phase: "Phase One",
-    title: "Discovery & Vision",
-    duration: "Week 1–2",
+    phase: "Step One",
+    title: "Vision Alignment",
     description:
-      "Every great design begins with deep listening. We spend the first phase getting to know you — your lifestyle, your aesthetics, your non-negotiables, and your dreams. This isn't a questionnaire exercise; it's a genuine conversation about how you live and what you love.",
+      "Every exceptional space begins with clarity. We engage in an in-depth consultation to understand your lifestyle, aspirations, design sensibilities, and long-term vision — ensuring the foundation of the project is deeply personal and purpose-driven.",
     activities: [
-      "Initial discovery call (60 minutes)",
-      "On-site visit and space assessment",
-      "Lifestyle & preference deep-dive",
-      "Brief documentation and alignment",
-      "Project scope and budget discussion",
+      "In-depth lifestyle consultation",
+      "Aspiration & sensibility mapping",
+      "Long-term vision alignment",
+      "Site assessment & spatial audit",
+      "Brief finalization",
     ],
-    deliverable: "A detailed design brief that captures your vision in full.",
+    deliverable: "A deeply personal design brief rooted in your lifestyle.",
     image: "https://images.unsplash.com/photo-1593642634315-48f5414c3ad9?w=800&q=80",
   },
   {
     number: "02",
-    phase: "Phase Two",
-    title: "Concept Design",
-    duration: "Week 2–4",
+    phase: "Step Two",
+    title: "Concept Curation",
     description:
-      "With the brief in hand, we translate your vision into visual concepts. This is where your space begins to take shape — through mood boards, color palettes, material directions, and early layout ideas. We present multiple directions and refine based on your feedback.",
+      "We translate your vision into a distinctive design language. From spatial philosophy to material direction, lighting mood to aesthetic narrative — a cohesive concept is curated to define the identity of your space.",
     activities: [
-      "Concept mood board creation",
-      "Material and color palette curation",
-      "Initial space layout explorations",
-      "Style reference presentation",
-      "Client feedback and direction refinement",
+      "Spatial philosophy development",
+      "Material & texture direction",
+      "Lighting mood conceptualization",
+      "Aesthetic narrative curation",
+      "Concept mood boards",
     ],
-    deliverable: "An approved concept direction with mood boards and material palette.",
+    deliverable: "A cohesive design identity with curated material palettes.",
     image: "https://images.unsplash.com/photo-1618219908412-a29a1bb7b86e?w=800&q=80",
   },
   {
     number: "03",
-    phase: "Phase Three",
-    title: "Design Development",
-    duration: "Week 4–7",
+    phase: "Step Three",
+    title: "Precision Space Planning",
     description:
-      "With the concept approved, we move into full design development. This is where precision meets creativity — detailed floor plans, 3D visualizations, and final material selections come together into a comprehensive design package.",
+      "Function meets finesse. We develop technically detailed and thoughtfully optimized floor plans that maximize flow, proportion, and spatial harmony while maintaining architectural integrity.",
     activities: [
-      "Detailed AutoCAD floor plans",
-      "3D room-by-room visualizations",
-      "Furniture specifications and layouts",
-      "Lighting design and electrical planning",
-      "Material sample sourcing and presentation",
+      "Technical floor plan development",
+      "Flow & movement optimization",
+      "Proportion & scale analysis",
+      "Architectural integrity preservation",
+      "Zoning & functional mapping",
     ],
-    deliverable: "A complete design package with 3D renders, floor plans, and material specifications.",
+    deliverable: "Technically detailed and spatially optimized floor plans.",
     image: "https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?w=800&q=80",
   },
   {
     number: "04",
-    phase: "Phase Four",
-    title: "Sourcing & Procurement",
-    duration: "Week 6–12",
+    phase: "Step Four",
+    title: "Immersive 3D Visualization",
     description:
-      "Once designs are signed off, we begin the careful process of sourcing every element. We tap into our curated network of artisans, suppliers, and manufacturers — both domestic and global — to procure exactly what your space calls for.",
+      "Experience your space before it is built. Through high-quality 3D renders, we bring textures, materials, lighting, and ambience together — allowing you to step into your future environment with complete confidence.",
     activities: [
-      "Vendor and artisan selection",
-      "Custom furniture commissioning",
-      "Import and logistics management",
-      "Quality inspection at source",
-      "Procurement schedule management",
+      "High-fidelity 3D modeling",
+      "Photorealistic material rendering",
+      "Artificial & natural lighting simulation",
+      "Ambience & mood visualization",
+      "Interactive 360 views (optional)",
     ],
-    deliverable: "All items procured, quality-checked, and staged for installation.",
+    deliverable: "A complete photorealistic preview of your future environment.",
     image: "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=800&q=80",
   },
   {
     number: "05",
-    phase: "Phase Five",
-    title: "Execution & Installation",
-    duration: "Week 8–20",
+    phase: "Step Five",
+    title: "Transparent Investment Planning",
     description:
-      "Our project managers take over the site — coordinating contractors, overseeing construction, and managing installations with meticulous attention to quality. You'll receive regular updates without needing to be involved in the day-to-day.",
+      "Luxury is built on clarity. We provide a comprehensive and structured budget plan, detailing materials, finishes, fixtures, and execution scope — ensuring financial transparency without compromising design excellence.",
     activities: [
-      "Contractor coordination and briefing",
-      "Construction quality oversight",
-      "Furniture and fixture installation",
-      "Soft furnishing and accessory placement",
-      "Weekly progress reports to client",
+      "Comprehensive cost estimation",
+      "Material & finish itemization",
+      "Fixture & fitting specifications",
+      "Execution scope definition",
+      "Financial milestone planning",
     ],
-    deliverable: "A fully executed space, ready for final styling.",
+    deliverable: "A structured investment plan with complete financial clarity.",
     image: "https://images.unsplash.com/photo-1600210492493-0946911123ea?w=800&q=80",
   },
   {
     number: "06",
-    phase: "Phase Six",
-    title: "The Grand Reveal",
-    duration: "Final Week",
+    phase: "Step Six",
+    title: "Flawless Execution & Delivery",
     description:
-      "The moment we live for. After a final snagging walk-through to ensure every detail meets our standard, we style the space to perfection — flowers, books, art, candles, every last touch — and hand you back your transformed home.",
+      "Design is only as powerful as its execution. With meticulous site supervision, uncompromised quality control, and refined craftsmanship, we transform concept into reality — delivering a space that is timeless, elevated, and truly yours.",
     activities: [
-      "Final snagging and punch list resolution",
-      "Complete interior styling",
-      "Art, plants, and accessory placement",
-      "Photography session (optional)",
-      "White-glove handover ceremony",
+      "Meticulous site supervision",
+      "Uncompromised quality control",
+      "Refined craftsmanship management",
+      "Timely milestone tracking",
+      "Final flawless handover",
     ],
-    deliverable: "Your dream space — ready to live in, exactly as you imagined.",
+    deliverable: "A timeless, elevated space delivered with absolute precision.",
     image: "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=800&q=80",
   },
 ];
@@ -152,7 +146,7 @@ export default function ProcessPage() {
     <>
       <PageHero
         label="How We Work"
-        title="Our Process"
+        title="Our Design Journey"
         subtitle="Transparency, collaboration, and precision — every step of the way."
         image="https://images.unsplash.com/photo-1497366754035-f200968a6e72?w=1600&q=85"
       />
