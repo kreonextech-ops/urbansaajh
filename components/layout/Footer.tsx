@@ -24,12 +24,14 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto px-6 lg:px-12 py-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
         {/* Brand */}
         <div className="lg:col-span-2">
-          <p className="font-italiana text-2xl tracking-widest text-cream mb-2">
-            URBAN SAAJH
-          </p>
-          <p className="font-dm text-[9px] tracking-ultra-wide uppercase text-taupe mb-6">
-            Bespoke Interior Design
-          </p>
+          <div className="flex items-center gap-4 mb-6">
+            <img src="/logo.png" alt="Urban Saajh Logo" className="h-12 w-auto" />
+            <div className="flex flex-col leading-none">
+              <p className="font-italiana text-2xl tracking-widest text-cream">
+                URBAN SAAJH <span className="text-gold">BY TEJ</span>
+              </p>
+            </div>
+          </div>
           <p className="font-cormorant text-lg italic text-taupe leading-relaxed max-w-xs">
             "A space is only as beautiful as the story it tells. We craft interiors that breathe life into every corner."
           </p>

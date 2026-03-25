@@ -6,8 +6,8 @@ import WhatsAppButton from "@/components/ui/WhatsAppButton";
 
 export const metadata: Metadata = {
   title: {
-    default: "Urban Saajh — Bespoke Interior Design | Bagdogra, Siliguri, Darjeeling",
-    template: "%s | Urban Saajh Interior Design",
+    default: "Urban Saajh By Tej — Bespoke Interior Design | Bagdogra, Siliguri, Darjeeling",
+    template: "%s | Urban Saajh By Tej",
   },
   description:
     "Urban Saajh is a premium interior design studio serving Bagdogra, Siliguri, Darjeeling, Kurseong, Kalimpong, Sikkim, and the entire North Bengal hills region. Bespoke residential and commercial interiors crafted by expert designer Tejinder Singh Bhogal.",
@@ -65,16 +65,16 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: "Urban Saajh — Bespoke Interior Design | Bagdogra · Siliguri · Darjeeling",
+    title: "Urban Saajh By Tej — Bespoke Interior Design | Bagdogra · Siliguri · Darjeeling",
     description:
-      "Premium interior design studio serving Bagdogra, Siliguri, Darjeeling, Kurseong, Kalimpong, and Sikkim. Crafting timeless, functional, and soulful spaces.",
+      "Premium interior design studio by Tejinder Singh Bhogal, serving Bagdogra, Siliguri, Darjeeling, Kurseong, Kalimpong, and Sikkim.",
     type: "website",
     locale: "en_IN",
-    siteName: "Urban Saajh",
+    siteName: "Urban Saajh By Tej",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Urban Saajh — Bespoke Interior Design | Bagdogra · Siliguri · Darjeeling",
+    title: "Urban Saajh By Tej — Bespoke Interior Design | Bagdogra · Siliguri · Darjeeling",
     description:
       "Premium interior design studio serving Bagdogra, Siliguri, Darjeeling, Kurseong, Kalimpong, and Sikkim.",
     creator: "@urbansaajh_bytej",

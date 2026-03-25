@@ -47,21 +47,23 @@ export default function Navbar() {
       >
         <div className="max-w-7xl mx-auto px-6 lg:px-12 flex items-center justify-between">
           {/* Logo */}
-          <Link href="/" className="group flex flex-col leading-none">
-            <span
-              className={`font-italiana text-2xl tracking-widest transition-colors duration-300 ${
-                scrolled || !isHome ? "text-espresso" : "text-cream"
+          <Link href="/" className="group flex items-center gap-3">
+            <img 
+              src="/logo.png" 
+              alt="Urban Saajh Logo" 
+              className={`h-10 w-auto transition-all duration-300 ${
+                scrolled || !isHome ? "brightness-50" : "brightness-100"
               }`}
-            >
-              URBAN SAAJH
-            </span>
-            <span
-              className={`font-dm text-[9px] tracking-ultra-wide uppercase mt-0.5 transition-colors duration-300 ${
-                scrolled || !isHome ? "text-taupe-dark" : "text-taupe"
-              }`}
-            >
-              Bespoke Interior Design
-            </span>
+            />
+            <div className="flex flex-col leading-none">
+              <span
+                className={`font-italiana text-2xl tracking-widest transition-colors duration-300 ${
+                  scrolled || !isHome ? "text-espresso" : "text-cream"
+                }`}
+              >
+                URBAN SAAJH <span className="text-gold">BY TEJ</span>
+              </span>
+            </div>
           </Link>
 
           {/* Desktop Nav */}
