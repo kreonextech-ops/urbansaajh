@@ -7,48 +7,39 @@ import { ChevronLeft, ChevronRight, Quote } from "lucide-react";
 const testimonials = [
   {
     id: 1,
-    name: "Sudeep & Sharmila Chatterjee",
+    name: "Amitabh & Snigdha Das",
     role: "Homeowners, Siliguri",
     quote:
-      "Tejinder has an incredible eye for detail. Our villa in Siliguri feels like a sanctuary. He managed to blend our traditional Bengali heritage with a modern, sleek aesthetic that we absolutely love.",
-    image: "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=200&q=80",
-    project: "The Heritage Villa",
+      "Very happy with the work of Urban Saajh. Great designs, good coordination, and neat finishing. Tejinder and the team listened to our needs and delivered beyond expectations.",
+    image: "",
+    project: "",
   },
   {
     id: 2,
-    name: "Dr. Anirban Das",
-    role: "Medical Director, Bagdogra",
+    name: "Priyanka Gajmer",
+    role: "Fashion Designer, Siliguri",
     quote:
-      "Designing a clinic that feels professional yet warm is a challenge. Urban Saajh exceeded my expectations. The space planning in our Bagdogra facility is remarkably efficient and world-class in its aesthetic.",
-    image: "https://images.unsplash.com/photo-1566492031773-4f4e44671857?w=200&q=80",
-    project: "Lifeline Wellness Centre",
+      "No doubt he’s the best in his craft. Very professional and creative interior designer. Urban Saajh understood my vision perfectly.",
+    image: "",
+    project: "",
   },
   {
     id: 3,
-    name: "Pallavi Sen",
-    role: "Entrepreneur, Darjeeling",
+    name: "Deepak Pradhan",
+    role: "Homeowner, Kalimpong",
     quote:
-      "Working with Tejinder was a seamless experience. He is patient, transparent, and truly visionary. My apartment in Darjeeling is now the talk of my social circle. Truly bespoke design with soul!",
-    image: "https://images.unsplash.com/photo-1567532939604-b6b5b0db2604?w=200&q=80",
-    project: "Cloud Nine Apartment",
+      "Amazing experience working with the Urban Saajh team! They understood my taste perfectly and delivered elegant, functional designs on time. Highly recommended for anyone looking to transform their space beautifully.",
+    image: "",
+    project: "",
   },
   {
     id: 4,
-    name: "Ayan & Barnali Banerjee",
-    role: "Homeowners, Kurseong",
+    name: "Sandeep Roy",
+    role: "Business Owner, Bagdogra",
     quote:
-      "From the first 3D render to the final handover, the transparency was refreshing. They respected our budget while delivering a luxury finish that feels twice its cost. Highly recommend for anyone in the hills.",
-    image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=200&q=80",
-    project: "Mountain Mist Retreat",
-  },
-  {
-    id: 5,
-    name: "Rajat & Ishita Mukherjee",
-    role: "Creative Directors, Siliguri",
-    quote:
-      "The 'Design Journey' is real. Urban Saajh transformed our ancestral home into a contemporary masterpiece without losing its soul. Meticulous execution and brilliant craftsmanship from start to finish.",
-    image: "https://images.unsplash.com/photo-1554151228-14d9def656e4?w=200&q=80",
-    project: "The Ancestral Revival",
+      "Thank you, Tejinder, for your outstanding work on the design! I truly appreciate your support and creativity. Your friendliness and professionalism shine through in everything you do, and it's greatly valued. Thanks again!",
+    image: "",
+    project: "",
   },
 ];
 
