@@ -26,9 +26,12 @@ export default function Footer() {
         <div className="lg:col-span-2">
           <div className="flex items-center gap-4 mb-6">
             <img src="/logo.png" alt="Urban Saajh Logo" className="h-12 w-auto" />
-            <div className="flex flex-col leading-none">
-              <p className="font-italiana text-2xl tracking-widest text-cream">
-                URBAN SAAJH <span className="text-gold">BY TEJ</span>
+            <div className="flex flex-col items-start leading-[0.9]">
+              <p className="font-cormorant text-2xl tracking-[0.15em] font-medium text-cream">
+                URBAN SAAJH
+              </p>
+              <p className="font-cormorant text-[10px] tracking-[0.4em] font-light uppercase mt-1 text-gold">
+                BY TEJ
               </p>
             </div>
           </div>

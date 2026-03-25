@@ -55,13 +55,18 @@ export default function Navbar() {
                 scrolled || !isHome ? "brightness-50" : "brightness-100"
               }`}
             />
-            <div className="flex flex-col leading-none">
+            <div className="flex flex-col items-start leading-[0.9]">
               <span
-                className={`font-italiana text-2xl tracking-widest transition-colors duration-300 ${
+                className={`font-cormorant text-2xl tracking-[0.15em] font-medium transition-colors duration-300 ${
                   scrolled || !isHome ? "text-espresso" : "text-cream"
                 }`}
               >
-                URBAN SAAJH <span className="text-gold">BY TEJ</span>
+                URBAN SAAJH
+              </span>
+              <span
+                className={`font-cormorant text-[9px] tracking-[0.4em] font-light uppercase mt-1 text-gold`}
+              >
+                BY TEJ
               </span>
             </div>
           </Link>
