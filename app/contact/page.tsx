@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { PageHero, Reveal, SectionLabel } from "@/components/ui/shared";
 import { Mail, Phone, MapPin, Instagram, Clock, ArrowRight } from "lucide-react";
+import { sendEmail } from "@/app/actions/sendEmail";
 
 // Metadata for this page is provided via layout.tsx since this is a client component.
 // Page-specific SEO is handled through the global metadata in app/layout.tsx.
@@ -13,17 +14,33 @@ export default function ContactPage() {
     phone: "",
     message: "",
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
+  const [error, setError] = useState<string | null>(null);
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
   ) => {
     setForm({ ...form, [e.target.name]: e.target.value });
+    if (error) setError(null);
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setSubmitted(true);
+    setIsSubmitting(true);
+    setError(null);
+
+    const formData = new FormData();
+    Object.entries(form).forEach(([key, value]) => formData.append(key, value));
+
+    const result = await sendEmail(formData);
+
+    if (result.success) {
+      setSubmitted(true);
+    } else {
+      setError(result.error || "Something went wrong. Please try again.");
+    }
+    setIsSubmitting(false);
   };
 
   return (
@@ -147,7 +164,7 @@ export default function ContactPage() {
                   Project Enquiry Form
                 </p>
 
-                <div className="space-y-6">
+                <form onSubmit={handleSubmit} className="space-y-6">
                   {/* Name & Email */}
                   <div className="grid sm:grid-cols-2 gap-5">
                     <div>
@@ -205,25 +222,36 @@ export default function ContactPage() {
                       name="message"
                       value={form.message}
                       onChange={handleChange}
+                      required
                       rows={4}
                       className="w-full bg-transparent border-b border-cream-dark focus:border-espresso outline-none py-2 font-dm text-sm text-espresso placeholder-taupe transition-colors duration-200 resize-none"
                       placeholder="Describe your space, vision, timeline..."
                     />
                   </div>
 
+                  {error && (
+                    <p className="font-dm text-[10px] text-red-500 italic text-center">
+                      Error: {error}
+                    </p>
+                  )}
+
                   <button
                     type="submit"
-                    onClick={handleSubmit}
-                    className="w-full font-dm text-[11px] tracking-ultra-wide uppercase py-4 bg-espresso text-cream hover:bg-espresso-light transition-all duration-300 flex items-center justify-center gap-3 mt-4"
+                    disabled={isSubmitting}
+                    className={`w-full font-dm text-[11px] tracking-ultra-wide uppercase py-4 transition-all duration-300 flex items-center justify-center gap-3 mt-4 ${
+                      isSubmitting 
+                        ? "bg-espresso/50 text-cream/70 cursor-not-allowed" 
+                        : "bg-espresso text-cream hover:bg-espresso-light"
+                    }`}
                   >
-                    Send Enquiry
-                    <ArrowRight size={13} />
+                    {isSubmitting ? "Sending..." : "Send Enquiry"}
+                    {!isSubmitting && <ArrowRight size={13} />}
                   </button>
 
                   <p className="font-dm text-[9px] text-taupe text-center">
                     We respond within 24 hours. Your information is kept strictly confidential.
                   </p>
-                </div>
+                </form>
               </div>
             )}
           </Reveal>
