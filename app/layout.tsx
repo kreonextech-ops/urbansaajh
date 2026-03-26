@@ -3,6 +3,7 @@ import "./globals.css";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import WhatsAppButton from "@/components/ui/WhatsAppButton";
+import Script from "next/script";
 
 export const metadata: Metadata = {
   title: {
@@ -96,6 +97,21 @@ export default function RootLayout({
           href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=DM+Sans:wght@300;400;500&family=Italiana&display=swap"
           rel="stylesheet"
         />
+        {/* Google tag (gtag.js) */}
+        <Script
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=G-C8QCE40B3V"
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'G-C8QCE40B3V');
+          `}
+        </Script>
       </head>
       <body className="bg-warm-white text-espresso antialiased" suppressHydrationWarning>
         <Navbar />
