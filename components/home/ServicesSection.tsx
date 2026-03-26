@@ -7,50 +7,50 @@ import { ArrowRight } from "lucide-react";
 const services = [
   {
     number: "01",
-    title: "Residential Design",
-    subtitle: "Your home, perfected.",
+    title: "Residential Design & Modular Kitchen Solutions",
+    subtitle: "Your home, crafted to perfection.",
     description:
-      "From private villas to luxury apartments, we design living spaces that reflect who you are — balancing comfort, beauty, and your unique lifestyle.",
+      "From luxury villas to smart apartments, we design homes that are beautiful, practical, and truly yours. Specializing in high-quality modular kitchens and wardrobes.",
     image: "/images/services/residential.png",
   },
   {
     number: "02",
     title: "Commercial Interiors",
-    subtitle: "Spaces that inspire work.",
+    subtitle: "Professional spaces that mean business.",
     description:
-      "Offices, showrooms, and hospitality spaces designed to elevate brand identity and create environments where productivity and elegance coexist.",
+      "Offices, showrooms, and retail spaces designed to impress your clients and boost productivity. We handle everything from functional layouts to modern branding.",
     image: "/images/services/commercial-no-brand.png",
   },
   {
     number: "03",
     title: "Turnkey Projects",
-    subtitle: "Zero stress, total luxury.",
+    subtitle: "Hassle-free, end-to-end execution.",
     description:
-      "We manage the entire journey — from concept to construction to final styling — delivering a fully finished space with no compromise on quality.",
+      "Hand over your keys and relax. We take complete responsibility for your project — from material procurement to the final finishing — delivering your dream space on time.",
     image: "/images/services/turnkey.png",
   },
   {
     number: "04",
     title: "Space Planning",
-    subtitle: "Every inch, intentional.",
+    subtitle: "Every inch, maximum utility.",
     description:
-      "Expert space analysis and layout design to maximize functionality and flow, ensuring your space works as beautifully as it looks.",
+      "Expert space analysis and layout design to maximize functionality and movement, ensuring your home works as beautifully as it looks.",
     image: "/images/services/space-planning.png",
   },
   {
     number: "05",
     title: "Custom Furniture",
-    subtitle: "Made for you, only you.",
+    subtitle: "Crafted for your space, only yours.",
     description:
-      "Custom-designed furniture pieces crafted by master artisans to complement your space perfectly — one-of-a-kind pieces with lasting character.",
+      "Custom-designed furniture pieces crafted by master artisans to fit your home's dimensions and aesthetic perfectly — one-of-a-kind pieces for a premium feel.",
     image: "/images/services/custom-furniture.png",
   },
   {
     number: "06",
-    title: "Consultation",
-    subtitle: "Luxury design, anywhere.",
+    title: "3D Visualisation & Design Consultation",
+    subtitle: "See your dream space before construction.",
     description:
-      "Bring Urban Saajh's expertise to your doorstep, wherever you are. Detailed consultations with mood boards, 3D visualizations, and material guides.",
+      "See how your project will look before the first brick is laid. High-quality 3D renders, material guides, and professional design advice to avoid costly mistakes.",
     image: "/images/services/consultation-v2.png",
   },
 ];
