@@ -1,113 +1,113 @@
 "use client";
 
 import { Reveal, SectionLabel } from "@/components/ui/shared";
-import { Wallet, Clock, UserCheck, Gem, Smile, ArrowRight } from "lucide-react";
+import { Wallet, Clock, UserCheck, Gem, Smile } from "lucide-react";
 
 const reasons = [
   {
-    icon: <Wallet size={20} />,
+    number: "01",
+    icon: <Wallet size={24} />,
     title: "Budget-Friendly Packages",
-    description: "High-end luxury design that respects your investment and maximizes value.",
+    description: "Premium interior design tailored to your financial comfort. We provide high-end aesthetics while respecting your investment goals.",
   },
   {
-    icon: <Clock size={20} />,
+    number: "02",
+    icon: <Clock size={24} />,
     title: "Timely Project Delivery",
-    description: "We stick to our timelines, ensuring you move into your new space exactly as planned.",
+    description: "We value your time. Our structured approach ensures every project is completed and handed over exactly as promised, without delays.",
   },
   {
-    icon: <UserCheck size={20} />,
-    title: "Personalized Design Solutions",
-    description: "Every home we craft is unique, reflecting your personal story and lifestyle.",
+    number: "03",
+    icon: <UserCheck size={24} />,
+    title: "Personalized Solutions",
+    description: "Your space should reflect your story. We create bespoke designs that are uniquely customized to your lifestyle, needs, and personality.",
   },
   {
-    icon: <Gem size={20} />,
-    title: "Premium Quality Materials & Finishing",
-    description: "Zero compromise on quality. We use only the finest materials and master craftsmen.",
+    number: "04",
+    icon: <Gem size={24} />,
+    title: "Premium Quality & Finishing",
+    description: "Uncompromising standards in every detail. We use the finest materials and skilled craftsmanship to ensure a luxurious and durable finish.",
   },
   {
-    icon: <Smile size={20} />,
+    number: "05",
+    icon: <Smile size={24} />,
     title: "Hassle-Free Experience",
-    description: "From the first concept to the final handover, we manage every single detail for you.",
+    description: "From the first concept to the final styling, we manage everything. Sit back and relax while we transform your space into a masterpiece.",
   },
 ];
 
 export default function WhyChooseUs() {
   return (
-    <section className="bg-cream py-24 lg:py-32 overflow-hidden">
+    <section id="why-choose-us" className="bg-warm-white py-24 lg:py-32">
       <div className="max-w-7xl mx-auto px-6 lg:px-12">
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
-          {/* Left: Content */}
-          <div>
-            <Reveal>
-              <SectionLabel label="Our Values" className="mb-6" />
-            </Reveal>
-            <Reveal delay={100}>
-              <h2 className="font-italiana text-5xl lg:text-6xl text-espresso tracking-wide leading-tight mb-4">
-                Why Choose
-                <br />
-                <span className="font-cormorant italic font-light">Urban Saajh</span>
-              </h2>
-            </Reveal>
-            <Reveal delay={200}>
-              <p className="font-cormorant text-xl italic text-gold mb-10">
-                Iconic Interiors Intelligently Designed!
-              </p>
-            </Reveal>
+        {/* Header */}
+        <div className="max-w-3xl mb-16">
+          <Reveal>
+            <SectionLabel label="Our Commitment" className="mb-6" />
+          </Reveal>
+          <Reveal delay={100}>
+            <h2 className="font-italiana text-5xl lg:text-6xl text-espresso tracking-wide leading-tight mb-6">
+              Why Choose
+              <br />
+              <span className="font-cormorant italic font-light text-taupe-dark">Urban Saajh</span>
+            </h2>
+          </Reveal>
+          <Reveal delay={200}>
+            <p className="font-cormorant text-2xl italic text-charcoal/70">
+              "Iconic Interiors Intelligently Designed!"
+            </p>
+          </Reveal>
+        </div>
 
-            {/* Reasons List */}
-            <div className="space-y-8 mb-12">
-              {reasons.map((reason, i) => (
-                <Reveal key={reason.title} delay={200 + i * 100}>
-                  <div className="flex gap-5 group">
-                    <div className="w-12 h-12 rounded-full border border-cream-dark bg-warm-white flex items-center justify-center text-gold group-hover:bg-gold group-hover:text-white transition-all duration-300 flex-shrink-0">
-                      {reason.icon}
-                    </div>
-                    <div>
-                      <h3 className="font-italiana text-xl text-espresso tracking-wide mb-1">
-                        {reason.title}
-                      </h3>
-                      <p className="font-dm text-sm text-charcoal/70 leading-relaxed max-w-md">
-                        {reason.description}
-                      </p>
-                    </div>
+        {/* Reasons Grid - Block Type Layout */}
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-px bg-cream-dark border border-cream-dark">
+          {reasons.map((reason, i) => (
+            <Reveal key={reason.number} delay={i * 100} className="h-full">
+              <div className="group bg-warm-white hover:bg-espresso transition-all duration-500 p-10 lg:p-12 h-full flex flex-col relative overflow-hidden cursor-default">
+                {/* Large Background Number */}
+                <p className="absolute top-4 right-6 font-cormorant text-8xl text-espresso/[0.03] group-hover:text-cream/[0.05] transition-colors duration-500 leading-none select-none">
+                  {reason.number}
+                </p>
+
+                {/* Icon & Index */}
+                <div className="flex items-center justify-between mb-10 relative z-10">
+                  <div className="w-12 h-12 rounded-full border border-gold/30 flex items-center justify-center text-gold group-hover:bg-gold group-hover:text-espresso transition-all duration-500">
+                    {reason.icon}
                   </div>
-                </Reveal>
-              ))}
-            </div>
+                  <span className="font-dm text-[10px] tracking-widest text-taupe group-hover:text-gold transition-colors duration-500 uppercase">
+                    Reason {reason.number}
+                  </span>
+                </div>
 
-            <Reveal delay={800}>
-              <div className="pt-8 border-t border-cream-dark">
-                <p className="font-dm text-[9px] tracking-[0.4em] uppercase text-taupe-dark">
-                  An Initiative by <span className="text-espresso font-medium">HK DESIGN STUDIO</span>
+                {/* Content */}
+                <h3 className="font-italiana text-2xl text-espresso group-hover:text-cream tracking-wide mb-4 transition-colors duration-500 relative z-10">
+                  {reason.title}
+                </h3>
+                <p className="font-dm text-sm text-charcoal/70 group-hover:text-taupe leading-relaxed transition-colors duration-500 relative z-10">
+                  {reason.description}
                 </p>
               </div>
             </Reveal>
-          </div>
+          ))}
 
-          {/* Right: Visual */}
-          <Reveal delay={400} className="relative">
-            <div className="relative aspect-[4/5] rounded-t-[200px] overflow-hidden group">
-              <img
-                src="/images/europa/942.jpg"
-                alt="Bespoke Interior Design"
-                className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000"
-              />
-              <div className="absolute inset-0 bg-espresso/10 group-hover:bg-transparent transition-colors duration-500" />
-              
-              {/* Floating Badge */}
-              <div className="absolute bottom-10 right-10 bg-warm-white/90 backdrop-blur-md p-8 border-l border-gold shadow-2xl max-w-[200px]">
-                <p className="font-cormorant text-3xl italic text-espresso leading-tight mb-2">
-                  "Excellence in every detail."
-                </p>
-                <div className="w-8 h-px bg-gold mb-2" />
-                <p className="font-dm text-[9px] tracking-widest uppercase text-taupe-dark">
-                  Quality Guaranteed
-                </p>
-              </div>
+          {/* Special Branding Block */}
+          <Reveal delay={reasons.length * 100} className="h-full">
+            <div className="group bg-cream-light p-10 lg:p-12 h-full flex flex-col justify-center items-center text-center relative overflow-hidden">
+               <div className="relative z-10">
+                 <p className="font-dm text-[10px] tracking-[0.4em] uppercase text-taupe-dark mb-4">
+                   Established Excellence
+                 </p>
+                 <div className="w-12 h-px bg-gold mx-auto mb-6" />
+                 <p className="font-cormorant text-lg italic text-espresso leading-relaxed max-w-[200px] mx-auto">
+                   An Initiative by <br />
+                   <span className="font-dm text-[11px] font-bold tracking-widest text-espresso uppercase not-italic block mt-2">
+                     HK DESIGN STUDIO
+                   </span>
+                 </p>
+               </div>
+               {/* Decorative Circle */}
+               <div className="absolute -bottom-10 -right-10 w-40 h-40 bg-gold/5 rounded-full" />
             </div>
-
-            {/* Decorative background element */}
-            <div className="absolute -z-10 -bottom-10 -left-10 w-64 h-64 bg-gold/5 rounded-full blur-3xl" />
           </Reveal>
         </div>
       </div>
