@@ -24,12 +24,13 @@ export default function AboutSection() {
           </Reveal>
           <Reveal delay={200}>
             <p className="font-dm text-base text-charcoal/75 leading-relaxed mb-6">
-              Urban Saajh was born from a simple but powerful belief — that a beautifully designed space has the power to transform how you live, feel, and thrive. We are a versatile interior design studio rooted in the rich cultural tapestry of India, crafting thoughtful spaces for every budget and lifestyle.
+              Urban Saajh by Tejinder Singh Bhogal was born from a powerful conviction — that design is not decoration, it is transformation. 
+              We believe a space should not just look beautiful — it should elevate how you live, think, work, and feel.
             </p>
           </Reveal>
           <Reveal delay={300}>
             <p className="font-dm text-base text-charcoal/75 leading-relaxed mb-8">
-              Every project we undertake is an intimate collaboration — we listen deeply, design thoughtfully, and execute flawlessly. From the sweep of a grand living room to the quiet comfort of a private study, we bring the same level of devotion to every inch.
+              Rooted in Indian sensibilities yet shaped by contemporary global aesthetics, Urban Saajh creates interiors that are intelligent, refined, and deeply personal. From modern urban residences to statement commercial environments, every space we design carries clarity of vision and strength of character.
             </p>
           </Reveal>
           <Reveal delay={400}>

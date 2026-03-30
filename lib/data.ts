@@ -21,5 +21,5 @@ export const BRAND = {
   name: "Urban Saajh",
   tagline: "Bespoke Interior Design — For Every Space & Budget",
   description:
-    "Urban Saajh is a versatile interior design studio crafting timeless, functional, and soulful spaces across India, from budget-friendly homes to luxury estates.",
+    "Urban Saajh by Tejinder Singh Bhogal is a premium interior design studio where design is not decoration, it's transformation. Rooted in Indian sensibilities and shaped by global aesthetics, we create intelligent, refined, and deeply personal spaces across India.",
 } as const;

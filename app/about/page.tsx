@@ -46,9 +46,8 @@ export default function AboutPage() {
         <Reveal>
           <div className="max-w-5xl mx-auto px-6 lg:px-12 text-center">
             <p className="font-cormorant text-3xl lg:text-5xl italic text-espresso leading-snug">
-              "Urban Saajh was born from a simple belief — that a beautifully designed space has the power to transform how you
-              <span className="text-gold"> live, feel, </span>
-              and thrive."
+              "Urban Saajh was born from a powerful conviction — that design is not decoration, it is
+              <span className="text-gold"> transformation. </span>"
             </p>
             <div className="w-12 h-px bg-gold mx-auto mt-10" />
           </div>
@@ -150,17 +149,13 @@ export default function AboutPage() {
             </Reveal>
             <Reveal delay={200}>
               <p className="font-dm text-base text-taupe/80 leading-relaxed mb-5">
-                Urban Saajh was founded in 2022 with one goal — to create beautiful, functional spaces for every kind of home and budget.
+                Urban Saajh by Tejinder Singh Bhogal was born from a powerful conviction — that design is not decoration, it is transformation. 
+                We believe a space should not just look beautiful — it should elevate how you live, think, work, and feel.
               </p>
             </Reveal>
             <Reveal delay={300}>
-              <p className="font-dm text-base text-taupe/80 leading-relaxed mb-5">
-                We believe design is not a luxury — it is a language. The way a home is arranged speaks volumes about the people who live in it. Our job is to help you speak your truth, beautifully.
-              </p>
-            </Reveal>
-            <Reveal delay={400}>
               <p className="font-dm text-base text-taupe/80 leading-relaxed mb-10">
-                Over four years and 50+ projects across India, we have earned our reputation not from awards alone, but from the joy on our clients' faces when they walk into their transformed space for the first time.
+                Rooted in Indian sensibilities yet shaped by contemporary global aesthetics, Urban Saajh creates interiors that are intelligent, refined, and deeply personal. From modern urban residences to statement commercial environments, every space we design carries clarity of vision and strength of character.
               </p>
             </Reveal>
             <Reveal delay={500}>
