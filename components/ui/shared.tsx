@@ -57,26 +57,48 @@ interface PageHeroProps {
   label: string;
   title: string;
   subtitle?: string;
-  image: string;
+  images: string | string[];
 }
 
-export function PageHero({ label, title, subtitle, image }: PageHeroProps) {
+export function PageHero({ label, title, subtitle, images }: PageHeroProps) {
+  const imageArray = Array.isArray(images) ? images : [images];
+
   return (
-    <section className="relative h-[55vh] min-h-[420px] flex items-end overflow-hidden">
-      <div
-        className="absolute inset-0 bg-cover bg-center"
-        style={{ backgroundImage: `url(${image})` }}
-      />
-      <div className="absolute inset-0 bg-espresso/55" />
-      <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-12 pb-16 w-full">
-        <SectionLabel label={label} className="mb-4" />
-        <h1 className="font-italiana text-5xl lg:text-7xl text-cream tracking-wider">
-          {title}
-        </h1>
+    <section className="relative h-[65vh] min-h-[500px] flex items-end overflow-hidden">
+      {/* Background Images Grid */}
+      <div className={`absolute inset-0 grid ${imageArray.length > 1 ? "grid-cols-1 lg:grid-cols-" + Math.min(imageArray.length, 3) : "grid-cols-1"}`}>
+        {imageArray.slice(0, 3).map((img, i) => (
+          <div 
+            key={i} 
+            className={`relative h-full w-full overflow-hidden ${i > 0 ? "hidden lg:block lg:border-l border-espresso/10" : ""}`}
+          >
+            <img
+              src={img}
+              alt={`${title} - ${i + 1}`}
+              className="w-full h-full object-cover"
+            />
+          </div>
+        ))}
+      </div>
+
+      {/* Overlay */}
+      <div className="absolute inset-0 bg-gradient-to-t from-espresso/80 via-espresso/40 to-espresso/20" />
+      
+      <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-12 pb-20 w-full text-left">
+        <Reveal>
+          <SectionLabel label={label} className="mb-6" />
+        </Reveal>
+        <Reveal delay={100}>
+          <h1 className="font-italiana text-6xl lg:text-8xl text-cream tracking-wider leading-tight">
+            {title}
+          </h1>
+        </Reveal>
         {subtitle && (
-          <p className="font-cormorant text-xl italic text-taupe mt-3 max-w-xl">
-            {subtitle}
-          </p>
+          <Reveal delay={200}>
+            <p className="font-cormorant text-2xl lg:text-3xl italic text-taupe mt-4 max-w-2xl leading-relaxed">
+              {subtitle}
+            </p>
+          </Reveal>
         )}
       </div>
     </section>

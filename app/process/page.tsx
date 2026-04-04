@@ -148,7 +148,11 @@ export default function ProcessPage() {
         label="How We Work"
         title="Our Design Journey"
         subtitle="Transparency, collaboration, and precision — every step of the way."
-        image="https://images.unsplash.com/photo-1497366754035-f200968a6e72?w=1600&q=85"
+        images={[
+          "/images/europa/Check 4.jpg.jpeg",
+          "/images/europa/Living 1.jpg",
+          "/images/europa/P1.jpg"
+        ]}
       />
 
       {/* Intro */}

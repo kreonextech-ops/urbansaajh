@@ -37,7 +37,7 @@ const services = [
       "Space Saving Furniture Layouts",
       "Complete Site Supervision",
     ],
-    image: "/images/services/residential.png",
+    image: "/images/europa/Kitchen 1.jpg",
   },
   {
     number: "02",
@@ -54,7 +54,7 @@ const services = [
       "Durable Material Palettes",
       "Timely Implementation",
     ],
-    image: "/images/services/commercial-no-brand.png",
+    image: "/images/europa/Lounge Room 1.jpg",
   },
   {
     number: "03",
@@ -71,7 +71,7 @@ const services = [
       "Punctual Project Handover",
       "Post-Completion Support",
     ],
-    image: "/images/services/turnkey.png",
+    image: "/images/europa/P1.jpg",
   },
   {
     number: "04",
@@ -88,7 +88,7 @@ const services = [
       "Clutter-Free Layouts",
       "Detailed Floor Plans",
     ],
-    image: "/images/services/space-planning.png",
+    image: "/images/europa/Staircase.jpg",
   },
   {
     number: "05",
@@ -105,7 +105,7 @@ const services = [
       "Care & Maintenance Guides",
       "On-Site Woodwork Oversight",
     ],
-    image: "/images/services/custom-furniture.png",
+    image: "/images/europa/Parents Closet 1.jpg",
   },
   {
     number: "06",
@@ -122,7 +122,7 @@ const services = [
       "Step-by-Step Design Roadmaps",
       "Expert Design Advice",
     ],
-    image: "/images/services/consultation-v2.png",
+    image: "/images/europa/Check 8.jpg.jpeg",
   },
 ];
 
@@ -133,7 +133,11 @@ export default function ServicesPage() {
         label="What We Offer"
         title="Our Services"
         subtitle="Versatile design solutions tailored to every space and budget."
-        image="/images/services/hero.png"
+        images={[
+          "/images/europa/Check 7.jpg.jpeg",
+          "/images/europa/Check 1.jpg.jpeg",
+          "/images/europa/Kitchen 1.jpg"
+        ]}
       />
 
       {/* Intro */}
