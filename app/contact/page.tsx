@@ -49,7 +49,11 @@ export default function ContactPage() {
         label="Get in Touch"
         title="Contact Us"
         subtitle="We'd love to hear about your space. Let's start a conversation."
-        image="https://images.unsplash.com/photo-1600210492493-0946911123ea?w=1600&q=85"
+        images={[
+          "/images/europa/Lounge Room 3.jpg",
+          "/images/europa/Dining 1.jpg",
+          "/images/europa/Check 6.jpg.jpeg"
+        ]}
       />
 
       <section className="bg-warm-white py-24 lg:py-32">
@@ -262,7 +266,7 @@ export default function ContactPage() {
       <section className="bg-cream-dark py-0">
         <div className="relative h-72 overflow-hidden">
           <img
-            src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=1600&q=80"
+            src="/images/europa/Lounge room 5.jpg"
             alt="Urban Saajh Studio"
             className="w-full h-full object-cover opacity-60"
           />

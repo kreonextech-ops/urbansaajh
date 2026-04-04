@@ -36,7 +36,11 @@ export default function AboutPage() {
         label="Our Story"
         title="About Urban Saajh"
         subtitle="Born from passion. Built on purpose. Defined by beauty."
-        image="/images/europa/Staircase.jpg"
+        images={[
+          "/images/europa/Staircase.jpg",
+          "/images/europa/Lounge room 7.jpg",
+          "/images/europa/Master Bedroom 2.jpg"
+        ]}
       />
 
 
