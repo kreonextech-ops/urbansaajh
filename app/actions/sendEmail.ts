@@ -41,13 +41,13 @@ export async function sendEmail(formData: FormData) {
     `,
     html: `
       <div style="font-family: sans-serif; color: #333; max-width: 600px; margin: 0 auto; border: 1px solid #eee; padding: 20px;">
-        <h2 style="color: #634d3d; font-family: serif; border-bottom: 2px solid #634d3d; padding-bottom: 10px;">New Project Enquiry</h2>
+        <h2 style="color: #1B3629; font-family: serif; border-bottom: 2px solid #1B3629; padding-bottom: 10px;">New Project Enquiry</h2>
         <p style="margin-bottom: 5px;"><strong>Client Name:</strong> ${name}</p>
-        <p style="margin-bottom: 5px;"><strong>Email:</strong> <a href="mailto:${email}" style="color: #634d3d;">${email}</a></p>
+        <p style="margin-bottom: 5px;"><strong>Email:</strong> <a href="mailto:${email}" style="color: #1B3629;">${email}</a></p>
         <p style="margin-bottom: 20px;"><strong>Phone:</strong> ${phone || "Not provided"}</p>
         
-        <div style="background: #fcfbf9; padding: 15px; border-left: 4px solid #634d3d;">
-          <p style="font-weight: bold; margin-top: 0; color: #634d3d;">Project Details / Message:</p>
+        <div style="background: #fcfbf9; padding: 15px; border-left: 4px solid #1B3629;">
+          <p style="font-weight: bold; margin-top: 0; color: #1B3629;">Project Details / Message:</p>
           <p style="white-space: pre-line; margin-bottom: 0;">${message}</p>
         </div>
         

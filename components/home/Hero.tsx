@@ -40,9 +40,9 @@ export default function Hero() {
           />
         </div>
       ))}
-      {/* Gradient overlay */}
-      <div className="absolute inset-0 bg-gradient-to-r from-espresso/80 via-espresso/50 to-transparent" />
-      <div className="absolute inset-0 bg-gradient-to-t from-espresso/40 via-transparent to-transparent" />
+      {/* Gradient overlay — neutral dark so image isn't colour-tinted */}
+      <div className="absolute inset-0 bg-gradient-to-r from-black/75 via-black/40 to-transparent" />
+      <div className="absolute inset-0 bg-gradient-to-t from-black/35 via-transparent to-transparent" />
 
       {/* Decorative vertical line */}
       <div className="absolute left-6 lg:left-12 top-0 bottom-0 flex flex-col items-center py-32 gap-0">

@@ -83,7 +83,7 @@ export default function TestimonialsSection() {
               {!isPlaying && (
                 <button
                   onClick={togglePlay}
-                  className="absolute inset-0 m-auto w-20 h-20 bg-espresso/80 text-cream rounded-full flex items-center justify-center hover:bg-espresso hover:scale-105 transition-all duration-300 z-20"
+                  className="absolute inset-0 m-auto w-20 h-20 bg-black/70 text-cream rounded-full flex items-center justify-center hover:bg-black hover:scale-105 transition-all duration-300 z-20"
                   aria-label="Play video"
                 >
                   <Play size={32} className="ml-1" fill="currentColor" />

@@ -11,7 +11,7 @@ const services = [
     subtitle: "Your home, crafted to perfection.",
     description:
       "From luxury villas to smart apartments, we design homes that are beautiful, practical, and truly yours. Specializing in high-quality modular kitchens and wardrobes.",
-    image: "/images/services/residential.png",
+    image: "/images/europa/Kitchen 1.jpg",
   },
   {
     number: "02",
@@ -19,7 +19,7 @@ const services = [
     subtitle: "Professional spaces that mean business.",
     description:
       "Offices, showrooms, and retail spaces designed to impress your clients and boost productivity. We handle everything from functional layouts to modern branding.",
-    image: "/images/services/commercial-no-brand.png",
+    image: "/images/europa/Lounge Room 1.jpg",
   },
   {
     number: "03",
@@ -27,7 +27,7 @@ const services = [
     subtitle: "Hassle-free, end-to-end execution.",
     description:
       "Hand over your keys and relax. We take complete responsibility for your project — from material procurement to the final finishing — delivering your dream space on time.",
-    image: "/images/services/turnkey.png",
+    image: "/images/europa/P1.jpg",
   },
   {
     number: "04",
@@ -35,7 +35,7 @@ const services = [
     subtitle: "Every inch, maximum utility.",
     description:
       "Expert space analysis and layout design to maximize functionality and movement, ensuring your home works as beautifully as it looks.",
-    image: "/images/services/space-planning.png",
+    image: "/images/europa/Staircase.jpg",
   },
   {
     number: "05",
@@ -43,7 +43,7 @@ const services = [
     subtitle: "Crafted for your space, only yours.",
     description:
       "Custom-designed furniture pieces crafted by master artisans to fit your home's dimensions and aesthetic perfectly — one-of-a-kind pieces for a premium feel.",
-    image: "/images/services/custom-furniture.png",
+    image: "/images/europa/Parents Closet 1.jpg",
   },
   {
     number: "06",
@@ -51,7 +51,7 @@ const services = [
     subtitle: "See your dream space before construction.",
     description:
       "See how your project will look before the first brick is laid. High-quality 3D renders, material guides, and professional design advice to avoid costly mistakes.",
-    image: "/images/services/consultation-v2.png",
+    image: "/images/europa/Check 8.jpg.jpeg",
   },
 ];
 

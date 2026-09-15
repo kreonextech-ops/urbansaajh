@@ -105,7 +105,7 @@ export default function ProcessSection() {
           </p>
           <Link
             href="/contact"
-            className="inline-flex items-center gap-3 font-dm text-[11px] tracking-ultra-wide uppercase px-10 py-4 bg-gold text-espresso hover:bg-gold-light transition-all duration-300"
+            className="inline-flex items-center gap-3 font-dm text-[11px] tracking-ultra-wide uppercase px-10 py-4 bg-espresso text-cream hover:bg-espresso-light transition-all duration-300"
           >
             Start Your Project
             <ArrowRight size={13} />

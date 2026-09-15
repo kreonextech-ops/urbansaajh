@@ -1,285 +1,316 @@
 "use client";
 
 import { useState } from "react";
-import type { Metadata } from "next";
 import Link from "next/link";
 import { Reveal, SectionLabel } from "@/components/ui/shared";
-import { ArrowRight, ArrowUpRight } from "lucide-react";
+import { ArrowRight, MapPin, Home, ArrowUpRight } from "lucide-react";
+import { featuredProjects } from "@/lib/featured-projects";
+import { archiveProjects } from "@/lib/archive-projects";
+import { Lightbox } from "@/components/ui/Lightbox";
 
-// NOTE: In client components, metadata can't be exported directly.
-// SEO for this page is handled by the global layout metadata.
-// For per-page portfolio SEO, add metadata in a server wrapper.
+const categories = ["All", "Previews & Mentions", "Kitchen & Dining", "Storage", "Rooms", "Living & Lounge", "Architecture"];
 
-const categories = ["All", ...["Previews & Mentions","Kitchen & Dining","Storage","Rooms","Living & Lounge","Architecture"]];
-
-const projects = [
-  // --- Portfolio Folder ---
-  {
-    id: 1,
-    title: "Living 1",
-    category: "Living & Lounge",
-    location: "Siliguri",
-    year: "2024",
-    area: "Residential",
-    image: "/images/portfolio/ChatGPT Image Mar 30, 2026, 09_54_23 PM.png",
-    size: "large",
-    description: "Elegant living area with a blend of modern and classic comfort.",
-  },
-  {
-    id: 2,
-    title: "Dining 1",
-    category: "Kitchen & Dining",
-    location: "Bagdogra",
-    year: "2024",
-    area: "Residential",
-    image: "/images/portfolio/ChatGPT Image Mar 30, 2026, 09_54_34 PM.png",
-    size: "medium",
-    description: "A welcoming dining space designed for intimacy and style.",
-  },
-  {
-    id: 3,
-    title: "Modern Sanctuary",
-    category: "Rooms",
-    location: "Darjeeling",
-    year: "2024",
-    area: "Residential",
-    image: "/images/portfolio/ChatGPT Image Mar 30, 2026, 09_54_38 PM.png",
-    size: "medium",
-    description: "A private retreat balanced by clean lines and serene tones.",
-  },
-  {
-    id: 4,
-    title: "Architectural Noir",
-    category: "Architecture",
-    location: "Siliguri",
-    year: "2024",
-    area: "Residential",
-    image: "/images/portfolio/ChatGPT Image Mar 30, 2026, 09_54_51 PM.png",
-    size: "medium",
-    description: "Bold structural details making a statement of luxury.",
-  },
-  {
-    id: 5,
-    title: "Golden Lounge",
-    category: "Living & Lounge",
-    location: "Gangtok",
-    year: "2024",
-    area: "Residential",
-    image: "/images/portfolio/ChatGPT Image Mar 30, 2026, 09_54_55 PM.png",
-    size: "large",
-    description: "Opulent seating area crafted for perfect social gatherings.",
-  },
-  {
-    id: 6,
-    title: "Sleek Suite",
-    category: "Rooms",
-    location: "Siliguri",
-    year: "2024",
-    area: "Residential",
-    image: "/images/portfolio/ChatGPT Image Mar 30, 2026, 09_55_04 PM.png",
-    size: "medium",
-    description: "A suite defined by its uncompromising quality and soul.",
-  },
-  {
-    id: 7,
-    title: "The Gallery Wall",
-    category: "Storage",
-    location: "Kalimpong",
-    year: "2024",
-    area: "Residential",
-    image: "/images/portfolio/ChatGPT Image Mar 30, 2026, 09_55_07 PM.png",
-    size: "medium",
-    description: "Customized display solutions for cherished collections.",
-  },
-  {
-    id: 8,
-    title: "Ambient Light",
-    category: "Architecture",
-    location: "Siliguri",
-    year: "2024",
-    area: "Residential",
-    image: "/images/portfolio/ChatGPT Image Mar 30, 2026, 09_55_11 PM.png",
-    size: "medium",
-    description: "Innovative lighting concepts that enhance vertical spaces.",
-  },
-  {
-    id: 9,
-    title: "Urban Loft",
-    category: "Living & Lounge",
-    location: "Bagdogra",
-    year: "2024",
-    area: "Residential",
-    image: "/images/portfolio/ChatGPT Image Mar 30, 2026, 09_55_14 PM.png",
-    size: "large",
-    description: "A refreshing modern approach with sophisticated urban touches.",
-  },
-  {
-    id: 10,
-    title: "Crystal Vista",
-    category: "Rooms",
-    location: "Siliguri",
-    year: "2024",
-    area: "Residential",
-    image: "/images/portfolio/ChatGPT Image Mar 30, 2026, 10_35_39 PM.png",
-    size: "medium",
-    description: "Clear and refined interiors with an eye for detail.",
-  },
-
-  // --- Europa Folder (all 51 images) ---
-  { id: 11, title: "Europa Check 1", category: "Previews & Mentions", location: "Europa Villa", year: "2024", area: "Residential", image: "/images/europa/Check 1.jpg.jpeg", size: "large", description: "Design study for Europa Villa." },
-  { id: 12, title: "Europa Check 2", category: "Previews & Mentions", location: "Europa Villa", year: "2024", area: "Residential", image: "/images/europa/Check 2.jpg.jpeg", size: "medium", description: "Design study for Europa Villa." },
-  { id: 13, title: "Europa Check 3", category: "Previews & Mentions", location: "Europa Villa", year: "2024", area: "Residential", image: "/images/europa/Check 3.jpg.jpeg", size: "medium", description: "Design study for Europa Villa." },
-  { id: 14, title: "Europa Check 4", category: "Previews & Mentions", location: "Europa Villa", year: "2024", area: "Residential", image: "/images/europa/Check 4.jpg.jpeg", size: "medium", description: "Design study for Europa Villa." },
-  { id: 15, title: "Europa Check 5", category: "Previews & Mentions", location: "Europa Villa", year: "2024", area: "Residential", image: "/images/europa/Check 5.jpg.jpeg", size: "large", description: "Design study for Europa Villa." },
-  { id: 16, title: "Europa Check 6", category: "Previews & Mentions", location: "Europa Villa", year: "2024", area: "Residential", image: "/images/europa/Check 6.jpg.jpeg", size: "medium", description: "Design study for Europa Villa." },
-  { id: 17, title: "Europa Check 7", category: "Previews & Mentions", location: "Europa Villa", year: "2024", area: "Residential", image: "/images/europa/Check 7.jpg.jpeg", size: "medium", description: "Design study for Europa Villa." },
-  { id: 18, title: "Europa Check 8", category: "Previews & Mentions", location: "Europa Villa", year: "2024", area: "Residential", image: "/images/europa/Check 8.jpg.jpeg", size: "medium", description: "Design study for Europa Villa." },
-  { id: 19, title: "Europa Check 9", category: "Previews & Mentions", location: "Europa Villa", year: "2024", area: "Residential", image: "/images/europa/Check 9.jpg.jpeg", size: "large", description: "Design study for Europa Villa." },
-  { id: 20, title: "Dining 1", category: "Kitchen & Dining", location: "Europa Villa", year: "2024", area: "Residential", image: "/images/europa/Dining 1.jpg", size: "medium", description: "Dining area at Europa Villa." },
-  { id: 21, title: "Kids Closet 1", category: "Storage", location: "Europa Villa", year: "2024", area: "Residential", image: "/images/europa/Kids Closet 1.jpg", size: "medium", description: "Storage space at Europa Villa." },
-  { id: 22, title: "kids closet 2", category: "Storage", location: "Europa Villa", year: "2024", area: "Residential", image: "/images/europa/kids closet 2.jpg", size: "medium", description: "Storage space at Europa Villa." },
-  { id: 23, title: "Kids Room 1", category: "Rooms", location: "Europa Villa", year: "2024", area: "Residential", image: "/images/europa/Kids Room 1.jpg", size: "large", description: "Kids room at Europa Villa." },
-  { id: 24, title: "Kids Room 2", category: "Rooms", location: "Europa Villa", year: "2024", area: "Residential", image: "/images/europa/Kids Room 2.jpg", size: "medium", description: "Kids room at Europa Villa." },
-  { id: 25, title: "Kids Room 3", category: "Rooms", location: "Europa Villa", year: "2024", area: "Residential", image: "/images/europa/Kids Room 3.jpg", size: "medium", description: "Kids room at Europa Villa." },
-  { id: 26, title: "Kitcehn 2", category: "Kitchen & Dining", location: "Europa Villa", year: "2024", area: "Residential", image: "/images/europa/Kitcehn 2.jpg", size: "medium", description: "Kitchen at Europa Villa." },
-  { id: 27, title: "Kitchen 1", category: "Kitchen & Dining", location: "Europa Villa", year: "2024", area: "Residential", image: "/images/europa/Kitchen 1.jpg", size: "large", description: "Kitchen at Europa Villa." },
-  { id: 28, title: "Kitchen 3", category: "Kitchen & Dining", location: "Europa Villa", year: "2024", area: "Residential", image: "/images/europa/Kitchen 3.jpg", size: "medium", description: "Kitchen at Europa Villa." },
-  { id: 29, title: "Living 1", category: "Living & Lounge", location: "Europa Villa", year: "2024", area: "Residential", image: "/images/europa/Living 1.jpg", size: "medium", description: "Living area at Europa Villa." },
-  { id: 30, title: "Living 2", category: "Living & Lounge", location: "Europa Villa", year: "2024", area: "Residential", image: "/images/europa/Living 2.jpg", size: "medium", description: "Living area at Europa Villa." },
-  { id: 31, title: "living Extra", category: "Living & Lounge", location: "Europa Villa", year: "2024", area: "Residential", image: "/images/europa/living Extra.jpg", size: "large", description: "Living area at Europa Villa." },
-  { id: 32, title: "Lounge Room 1", category: "Living & Lounge", location: "Europa Villa", year: "2024", area: "Residential", image: "/images/europa/Lounge Room 1.jpg", size: "medium", description: "Lounge space at Europa Villa." },
-  { id: 33, title: "Lounge room 2", category: "Living & Lounge", location: "Europa Villa", year: "2024", area: "Residential", image: "/images/europa/Lounge room 2.jpg", size: "medium", description: "Lounge space at Europa Villa." },
-  { id: 34, title: "Lounge Room 3", category: "Living & Lounge", location: "Europa Villa", year: "2024", area: "Residential", image: "/images/europa/Lounge Room 3.jpg", size: "medium", description: "Lounge space at Europa Villa." },
-  { id: 35, title: "lounge Room 4", category: "Living & Lounge", location: "Europa Villa", year: "2024", area: "Residential", image: "/images/europa/lounge Room 4.jpg", size: "large", description: "Lounge space at Europa Villa." },
-  { id: 36, title: "Lounge room 5", category: "Living & Lounge", location: "Europa Villa", year: "2024", area: "Residential", image: "/images/europa/Lounge room 5.jpg", size: "medium", description: "Lounge space at Europa Villa." },
-  { id: 37, title: "Lounge Room 6", category: "Living & Lounge", location: "Europa Villa", year: "2024", area: "Residential", image: "/images/europa/Lounge Room 6.jpg", size: "medium", description: "Lounge space at Europa Villa." },
-  { id: 38, title: "Lounge room 7", category: "Living & Lounge", location: "Europa Villa", year: "2024", area: "Residential", image: "/images/europa/Lounge room 7.jpg", size: "medium", description: "Lounge space at Europa Villa." },
-  { id: 39, title: "Master Bedroom 1", category: "Rooms", location: "Europa Villa", year: "2024", area: "Residential", image: "/images/europa/Master Bedroom 1.jpg", size: "large", description: "Bedroom at Europa Villa." },
-  { id: 40, title: "Master Bedroom 2", category: "Rooms", location: "Europa Villa", year: "2024", area: "Residential", image: "/images/europa/Master Bedroom 2.jpg", size: "medium", description: "Bedroom at Europa Villa." },
-  { id: 41, title: "Master Bedroom 3", category: "Rooms", location: "Europa Villa", year: "2024", area: "Residential", image: "/images/europa/Master Bedroom 3.jpg", size: "medium", description: "Bedroom at Europa Villa." },
-  { id: 42, title: "Master Bedroom 4", category: "Rooms", location: "Europa Villa", year: "2024", area: "Residential", image: "/images/europa/Master Bedroom 4.jpg", size: "medium", description: "Bedroom at Europa Villa." },
-  { id: 43, title: "Master Bedroom 5", category: "Rooms", location: "Europa Villa", year: "2024", area: "Residential", image: "/images/europa/Master Bedroom 5.jpg", size: "large", description: "Bedroom at Europa Villa." },
-  { id: 44, title: "P1", category: "Rooms", location: "Europa Villa", year: "2024", area: "Residential", image: "/images/europa/P1.jpg", size: "medium", description: "Room detail at Europa Villa." },
-  { id: 45, title: "P2", category: "Rooms", location: "Europa Villa", year: "2024", area: "Residential", image: "/images/europa/P2.jpg", size: "medium", description: "Room detail at Europa Villa." },
-  { id: 46, title: "P3", category: "Rooms", location: "Europa Villa", year: "2024", area: "Residential", image: "/images/europa/P3.jpg", size: "medium", description: "Room detail at Europa Villa." },
-  { id: 47, title: "Parents Closet 1", category: "Storage", location: "Europa Villa", year: "2024", area: "Residential", image: "/images/europa/Parents Closet 1.jpg", size: "large", description: "Storage space at Europa Villa." },
-  { id: 48, title: "Parents Closet 2", category: "Storage", location: "Europa Villa", year: "2024", area: "Residential", image: "/images/europa/Parents Closet 2.jpg", size: "medium", description: "Storage space at Europa Villa." },
-  { id: 49, title: "Parents Room 1", category: "Rooms", location: "Europa Villa", year: "2024", area: "Residential", image: "/images/europa/Parents Room 1.jpg", size: "medium", description: "Bedroom at Europa Villa." },
-  { id: 50, title: "Parents Room 2", category: "Rooms", location: "Europa Villa", year: "2024", area: "Residential", image: "/images/europa/Parents Room 2.jpg", size: "medium", description: "Bedroom at Europa Villa." },
-  { id: 51, title: "Parents Room 3", category: "Rooms", location: "Europa Villa", year: "2024", area: "Residential", image: "/images/europa/Parents Room 3.jpg", size: "large", description: "Bedroom at Europa Villa." },
-  { id: 52, title: "Staircase 2", category: "Architecture", location: "Europa Villa", year: "2024", area: "Residential", image: "/images/europa/Staircase 2.jpg", size: "medium", description: "Architectural detail at Europa Villa." },
-  { id: 53, title: "Staircase", category: "Architecture", location: "Europa Villa", year: "2024", area: "Residential", image: "/images/europa/Staircase.jpg", size: "medium", description: "Architectural detail at Europa Villa." },
-  { id: 54, title: "WhatsApp 1", category: "Previews & Mentions", location: "Europa Villa", year: "2024", area: "Residential", image: "/images/europa/WhatsApp Image 2026-03-16 at 8.49.19 PM (1).jpeg", size: "medium", description: "Preview from Europa Villa." },
-  { id: 55, title: "WhatsApp 2", category: "Previews & Mentions", location: "Europa Villa", year: "2024", area: "Residential", image: "/images/europa/WhatsApp Image 2026-03-16 at 8.49.19 PM (2).jpeg", size: "large", description: "Preview from Europa Villa." },
-  { id: 56, title: "WhatsApp 3", category: "Previews & Mentions", location: "Europa Villa", year: "2024", area: "Residential", image: "/images/europa/WhatsApp Image 2026-03-16 at 8.49.19 PM (3).jpeg", size: "medium", description: "Preview from Europa Villa." },
-  { id: 57, title: "WhatsApp 4", category: "Previews & Mentions", location: "Europa Villa", year: "2024", area: "Residential", image: "/images/europa/WhatsApp Image 2026-03-16 at 8.49.19 PM (4).jpeg", size: "medium", description: "Preview from Europa Villa." },
-  { id: 58, title: "WhatsApp 5", category: "Previews & Mentions", location: "Europa Villa", year: "2024", area: "Residential", image: "/images/europa/WhatsApp Image 2026-03-16 at 8.49.19 PM.jpeg", size: "medium", description: "Preview from Europa Villa." },
-  { id: 59, title: "WhatsApp 6", category: "Previews & Mentions", location: "Europa Villa", year: "2024", area: "Residential", image: "/images/europa/WhatsApp Image 2026-03-16 at 8.49.45 PM.jpeg", size: "large", description: "Preview from Europa Villa." },
-  { id: 60, title: "WhatsApp 7", category: "Previews & Mentions", location: "Europa Villa", year: "2024", area: "Residential", image: "/images/europa/WhatsApp Image 2026-03-16 at 8.50.04 PM.jpeg", size: "medium", description: "Preview from Europa Villa." },
-  { id: 61, title: "WhatsApp 8", category: "Previews & Mentions", location: "Europa Villa", year: "2024", area: "Residential", image: "/images/europa/WhatsApp Image 2026-03-16 at 8.55.25 PM.jpeg", size: "medium", description: "Preview from Europa Villa." },
-];
+const getGridClasses = (index: number, total: number) => {
+  let classes = "col-span-1 row-span-1";
+  
+  if (total === 3) {
+    if (index === 0) classes = "col-span-2 row-span-2";
+  } 
+  else if (total === 4) {
+    if (index === 0) classes = "col-span-2 lg:col-span-3 row-span-2"; 
+    if (index === 3) classes = "col-span-2 lg:col-span-1 row-span-1";
+  }
+  else if (total === 5) {
+    if (index === 0) classes = "col-span-2 row-span-2";
+    if (index === 3) classes = "col-span-2 row-span-1"; 
+    if (index === 4) classes = "col-span-2 lg:col-span-1 row-span-1";
+  }
+  else if (total >= 6) {
+    if (index === 0) classes = "col-span-2 row-span-2";
+    if (index === 5) classes = "col-span-2 lg:col-span-1 row-span-1";
+  }
+  return classes;
+};
 
 export default function PortfolioPage() {
   const [active, setActive] = useState("All");
   const [hovered, setHovered] = useState<number | null>(null);
 
-  const filtered =
-    active === "All" ? projects : projects.filter((p) => p.category === active);
+  // Lightbox state
+  const [lightboxOpen, setLightboxOpen] = useState(false);
+  const [currentGallery, setCurrentGallery] = useState<string[]>([]);
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  const openLightbox = (images: string[], index: number) => {
+    setCurrentGallery(images);
+    setCurrentIndex(index);
+    setLightboxOpen(true);
+  };
+
+  const filtered = active === "All" ? archiveProjects : archiveProjects.filter((p) => p.category === active);
+  const archiveImageUrls = filtered.map(p => p.image);
 
   return (
-    <>
-      {/* Hero */}
-      <section className="relative h-[55vh] min-h-[420px] flex items-end overflow-hidden">
+    <div className="bg-warm-white min-h-screen">
+      <Lightbox
+        isOpen={lightboxOpen}
+        images={currentGallery}
+        currentIndex={currentIndex}
+        onClose={() => setLightboxOpen(false)}
+        onNavigate={setCurrentIndex}
+      />
+
+      {/* 1. Hero (Cinematic Full Bleed) */}
+      <section className="relative h-[55vh] min-h-[400px] flex items-center justify-center overflow-hidden pt-24">
         <div
-          className="absolute inset-0 bg-cover bg-center"
-          style={{ backgroundImage: `url(/images/europa/Staircase.jpg)` }}
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+          style={{ backgroundImage: `url('/images/europa/Master Bedroom 2.jpg')` }}
         />
-        <div className="absolute inset-0 bg-espresso/60" />
-        <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-12 pb-16 w-full">
-          <SectionLabel label="Our Work" className="mb-4" />
-          <h1 className="font-italiana text-5xl lg:text-7xl text-cream tracking-wider">Portfolio</h1>
-          <p className="font-cormorant text-xl italic text-taupe mt-3">
-            Every project is a collaboration. Every space is a story.
-          </p>
+        <div className="absolute inset-0 bg-black/60" />
+        
+        <div className="relative z-10 text-center px-6 mt-8">
+          <Reveal>
+            <p className="font-dm text-[11px] tracking-[0.4em] uppercase text-gold mb-6">
+              A Curation of our Finest
+            </p>
+          </Reveal>
+          <Reveal delay={100}>
+            <h1 className="font-italiana text-5xl lg:text-7xl text-cream tracking-wide leading-none mb-6">
+              Spaces That
+              <br />
+              <span className="font-cormorant italic font-light text-gold/80">Tell Stories</span>
+            </h1>
+          </Reveal>
+          <Reveal delay={200}>
+             <div className="w-16 h-px bg-gold mx-auto mt-8" />
+          </Reveal>
         </div>
       </section>
 
-      {/* Filter & Grid */}
-      <section className="bg-warm-white py-16 lg:py-20">
+      {/* 2. The 6 Featured Projects */}
+      <section className="py-16 lg:py-24">
+        <div className="max-w-7xl mx-auto px-6 lg:px-12 space-y-40 lg:space-y-56">
+          {featuredProjects.map((project, index) => {
+            const isEven = index % 2 === 0;
+            const allImages = project.images;
+            const len = allImages.length;
+            
+            // Determine how many images to show on the grid (max 6 to keep it clean)
+            let maxVisible = 6;
+            if (len <= 6) maxVisible = len;
+
+            const extraCount = Math.max(0, len - maxVisible);
+
+            return (
+              <div key={project.id} id={project.id} className={`flex flex-col ${isEven ? 'lg:flex-row' : 'lg:flex-row-reverse'} gap-16 lg:gap-24 items-start`}>
+                
+                {/* Text Block */}
+                <div className="w-full lg:w-1/3 flex flex-col relative sticky top-32">
+                  <Reveal>
+                    <span className="font-cormorant text-6xl italic text-gold/30 mb-6 block">
+                      {String(index + 1).padStart(2, '0')}.
+                    </span>
+                  </Reveal>
+                  
+                  <Reveal delay={100}>
+                    <h2 className="font-italiana text-4xl lg:text-5xl text-espresso tracking-wide mb-6">
+                      {project.title}
+                    </h2>
+                  </Reveal>
+                  
+                  <Reveal delay={200}>
+                    <div className="flex items-center gap-6 font-dm text-[10px] tracking-widest uppercase text-taupe-dark border-b border-gold/20 pb-6 mb-8">
+                      <span className="flex items-center gap-2"><MapPin size={13} className="text-gold" /> {project.location}</span>
+                      <span className="flex items-center gap-2"><Home size={13} className="text-gold" /> {project.category}</span>
+                    </div>
+                  </Reveal>
+
+                  <Reveal delay={300}>
+                    <p className="font-dm text-sm text-charcoal/75 leading-relaxed">
+                      {project.description}
+                    </p>
+                  </Reveal>
+                </div>
+
+                {/* Bento Image Grid */}
+                <div className="w-full lg:w-2/3">
+                  <Reveal delay={200}>
+                    <div className="grid grid-cols-2 lg:grid-cols-3 gap-3 lg:gap-4 auto-rows-[150px] sm:auto-rows-[200px] lg:auto-rows-[250px]">
+                      {allImages.slice(0, maxVisible).map((img, i) => {
+                        const gridClasses = getGridClasses(i, maxVisible);
+                        const isLastVisible = i === maxVisible - 1;
+                        const hasMore = extraCount > 0;
+
+                        return (
+                          <div 
+                            key={i} 
+                            onClick={() => openLightbox(allImages, i)}
+                            className={`relative overflow-hidden group cursor-pointer ${gridClasses} bg-cream-dark/30 rounded-sm`}
+                          >
+                            <img 
+                              src={img} 
+                              alt={`${project.title} - view ${i + 1}`} 
+                              className={`w-full h-full object-cover transition-transform duration-1000 ${hasMore && isLastVisible ? 'opacity-50' : 'group-hover:scale-105'}`}
+                            />
+                            
+                            {/* Overlay for remaining images */}
+                            {hasMore && isLastVisible && (
+                              <div className="absolute inset-0 bg-espresso/80 flex flex-col items-center justify-center text-cream transition-colors group-hover:bg-espresso">
+                                <span className="font-cormorant text-4xl lg:text-5xl italic">+{extraCount}</span>
+                                <span className="font-dm text-[9px] tracking-widest uppercase mt-2 text-gold">View Gallery</span>
+                              </div>
+                            )}
+
+                            {/* Hover overlay for normal images */}
+                            {(!hasMore || !isLastVisible) && (
+                              <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center">
+                                <div className="w-12 h-12 rounded-full border border-cream/50 flex items-center justify-center text-cream backdrop-blur-sm">
+                                  <ArrowUpRight size={16} />
+                                </div>
+                              </div>
+                            )}
+                          </div>
+                        );
+                      })}
+                    </div>
+                  </Reveal>
+                </div>
+
+              </div>
+            );
+          })}
+        </div>
+      </section>
+
+      {/* 3. CTA Banner */}
+      <section className="bg-espresso py-24 px-6 lg:px-12 relative overflow-hidden">
+        <div className="absolute inset-0 bg-[url('/images/europa/Living%201.jpg')] opacity-[0.03] bg-cover bg-center mix-blend-overlay" />
+        
+        <div className="max-w-5xl mx-auto flex flex-col md:flex-row items-center justify-between gap-10 relative z-10">
+          <div className="text-center md:text-left">
+            <Reveal>
+              <p className="font-dm text-[11px] tracking-mega-wide uppercase text-gold mb-4">Have a project in mind?</p>
+            </Reveal>
+            <Reveal delay={100}>
+              <h2 className="font-italiana text-5xl lg:text-6xl text-cream tracking-wide leading-tight">
+                Let's Design Your
+                <br />
+                <span className="font-cormorant italic font-light text-gold/80">Dream Space</span>
+              </h2>
+            </Reveal>
+          </div>
+          <Reveal delay={200}>
+            <Link
+              href="/contact"
+              className="inline-flex items-center gap-4 font-dm text-[11px] tracking-ultra-wide uppercase px-10 py-5 bg-gold text-espresso hover:bg-cream transition-all duration-300 whitespace-nowrap"
+            >
+              Start the Conversation
+              <ArrowRight size={14} />
+            </Link>
+          </Reveal>
+        </div>
+      </section>
+
+      {/* 4. Studio Archive */}
+      <section className="bg-cream py-24 lg:py-32">
         <div className="max-w-7xl mx-auto px-6 lg:px-12">
-          {/* Filters */}
-          <div className="flex flex-wrap gap-1 mb-14 border-b border-cream-dark pb-6">
+          
+          <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-8 mb-16">
+            <div>
+              <Reveal>
+                <SectionLabel label="Studio Archive" className="mb-4" />
+              </Reveal>
+              <Reveal delay={100}>
+                <h2 className="font-italiana text-4xl lg:text-5xl text-espresso tracking-wide">
+                  Details & Design Moments
+                </h2>
+              </Reveal>
+            </div>
+            <Reveal delay={200}>
+              <p className="font-cormorant text-xl italic text-taupe-dark max-w-sm lg:text-right">
+                A glimpse into our process, materials, spaces and everything in between.
+              </p>
+            </Reveal>
+          </div>
+
+          {/* Interactive Filters */}
+          <div className="flex flex-wrap gap-2 mb-12">
             {categories.map((cat) => (
               <button
                 key={cat}
                 onClick={() => setActive(cat)}
-                className={`font-dm text-[10px] tracking-ultra-wide uppercase px-5 py-2.5 transition-all duration-200 ${
+                className={`font-dm text-[10px] tracking-widest uppercase px-6 py-3 transition-all duration-300 border ${
                   active === cat
-                    ? "bg-espresso text-cream"
-                    : "text-taupe-dark hover:text-espresso hover:bg-cream"
+                    ? "bg-espresso text-cream border-espresso"
+                    : "border-gold/30 text-espresso hover:border-espresso hover:bg-espresso/5"
                 }`}
               >
                 {cat}
               </button>
             ))}
-            <span className="ml-auto font-dm text-[10px] tracking-ultra-wide uppercase text-taupe self-center">
-              {filtered.length} Projects
-            </span>
           </div>
 
-          {/* Masonry Grid */}
-          <div className="columns-1 md:columns-2 lg:columns-3 gap-4 space-y-4">
+          {/* CSS to hide orphaned grid items so the bottom is always perfectly flush */}
+          <style dangerouslySetInnerHTML={{__html: `
+            /* lg screens (3 columns) */
+            @media (min-width: 1024px) {
+              .archive-grid > div:nth-child(3n+1):last-child { display: none; }
+              .archive-grid > div:nth-child(3n+2):last-child { display: none; }
+              .archive-grid > div:nth-child(3n+1):nth-last-child(2) { display: none; }
+            }
+            /* sm screens (2 columns) */
+            @media (min-width: 640px) and (max-width: 1023px) {
+              .archive-grid > div:nth-child(2n+1):last-child { display: none; }
+            }
+          `}} />
+
+          {/* Uniform Grid instead of Masonry to avoid jagged bottoms */}
+          <div className="archive-grid grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
             {filtered.map((project, i) => (
               <div
                 key={project.id}
-                className="break-inside-avoid"
+                className="group relative overflow-hidden cursor-pointer rounded-sm bg-cream-dark/20 aspect-[4/5]"
+                onClick={() => openLightbox(archiveImageUrls, i)}
                 onMouseEnter={() => setHovered(project.id)}
                 onMouseLeave={() => setHovered(null)}
               >
-                <Reveal delay={Math.min(i * 60, 400)}>
-                  <div className="group relative overflow-hidden bg-espresso cursor-pointer">
+                <Reveal delay={Math.min(i * 50, 300)} className="w-full h-full">
+                  <div className="w-full h-full">
+                    <img
+                      src={project.image}
+                      alt={project.title}
+                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                    />
+
+                    {/* Permanent subtle label */}
                     <div
-                      className={`relative overflow-hidden ${
-                        project.size === "large" ? "aspect-[3/4]" : "aspect-[4/3]"
+                      className={`absolute bottom-0 left-0 right-0 p-5 bg-gradient-to-t from-black/80 to-transparent transition-all duration-500 ${
+                        hovered === project.id ? "opacity-0 translate-y-2" : "opacity-100 translate-y-0"
                       }`}
                     >
-                      <img
-                        src={project.image}
-                        alt={project.title}
-                        className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                      />
+                      <p className="font-dm text-[9px] tracking-widest uppercase text-gold/90">
+                        {project.category}
+                      </p>
+                    </div>
 
-                      {/* Permanent label at bottom */}
-                      <div
-                        className={`absolute bottom-0 left-0 right-0 p-5 bg-gradient-to-t from-espresso/90 via-espresso/50 to-transparent transition-all duration-500 ${
-                          hovered === project.id ? "opacity-0 translate-y-2" : "opacity-100 translate-y-0"
-                        }`}
-                      >
-                        <p className="font-dm text-[9px] tracking-ultra-wide uppercase text-gold/80 mb-1">
-                          {project.category} · {project.location}
-                        </p>
-                      </div>
-
-                      {/* Hover detail overlay */}
-                      <div
-                        className={`absolute inset-0 bg-espresso/75 p-6 flex flex-col justify-end transition-all duration-500 ${
-                          hovered === project.id ? "opacity-100" : "opacity-0"
-                        }`}
-                      >
-                        <p className="font-dm text-[9px] tracking-ultra-wide uppercase text-gold mb-2">
-                          {project.category} · {project.year}
-                        </p>
-                        <p className="font-dm text-sm text-taupe leading-relaxed mb-4">
-                          {project.description}
-                        </p>
-                        <div className="flex items-center justify-between">
-                          <span className="font-dm text-[9px] tracking-ultra-wide uppercase text-taupe">
-                            {project.location} · {project.area}
-                          </span>
-                          <div className="w-8 h-8 border border-gold/50 flex items-center justify-center text-gold">
-                            <ArrowUpRight size={14} />
-                          </div>
+                    {/* Hover detail overlay */}
+                    <div
+                      className={`absolute inset-0 bg-espresso/80 p-6 flex flex-col justify-between transition-all duration-500 ${
+                        hovered === project.id ? "opacity-100" : "opacity-0"
+                      }`}
+                    >
+                      <div className="flex-1 flex items-center justify-center">
+                        <div className="w-12 h-12 border border-cream/50 rounded-full flex items-center justify-center text-cream backdrop-blur-sm">
+                          <ArrowUpRight size={16} />
                         </div>
+                      </div>
+                      <div className="flex items-center justify-between border-t border-gold/20 pt-4">
+                        <span className="font-dm text-[9px] tracking-widest uppercase text-gold">
+                          {project.category}
+                        </span>
+                        <span className="font-dm text-[9px] tracking-widest uppercase text-gold/70">
+                          {project.location}
+                        </span>
                       </div>
                     </div>
                   </div>
@@ -287,22 +318,9 @@ export default function PortfolioPage() {
               </div>
             ))}
           </div>
-
-          {/* Bottom CTA */}
-          <Reveal delay={200} className="mt-20 text-center">
-            <p className="font-cormorant text-2xl italic text-espresso/70 mb-6">
-              Have a space in mind?
-            </p>
-            <Link
-              href="/contact"
-              className="inline-flex items-center gap-3 font-dm text-[11px] tracking-ultra-wide uppercase px-10 py-4 bg-espresso text-cream hover:bg-espresso-light transition-all duration-300"
-            >
-              Start Your Project
-              <ArrowRight size={13} />
-            </Link>
-          </Reveal>
+          
         </div>
       </section>
-    </>
+    </div>
   );
 }

@@ -11,7 +11,7 @@ export const NAV_LINKS = [
 
 export const CONTACT = {
   phone: "+91 76020 16708",
-  email: "hello@urbansaajh.com",
+  email: "urbansaajh@gmail.com",
   address: "BHOGAL BROTHERS, BAGDOGRA, BIHAR MORE, PIN CODE- 734014",
   instagram: "https://www.instagram.com/urbansaajh_bytej/",
   hours: "Mon–Sat: 10AM–7PM | Sunday: By Appointment",

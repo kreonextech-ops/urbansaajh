@@ -9,16 +9,16 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        espresso: "#2C1810",
-        "espresso-light": "#4A2E22",
-        cream: "#F5EFE6",
-        "cream-dark": "#EDE4D8",
-        taupe: "#B8A99A",
-        "taupe-dark": "#8C7B6E",
-        gold: "#C9A96E",
-        "gold-light": "#E2C99A",
-        charcoal: "#3A3530",
-        "warm-white": "#FAF7F4",
+        espresso: "#1B3629",        // Dark Forest Green
+        "espresso-light": "#274D3A",// Lighter Forest Green
+        cream: "#F5F0E6",           // Light Beige
+        "cream-dark": "#E3D5C1",    // Darker Beige
+        taupe: "#9FA69D",           // Muted Sage/Grey
+        "taupe-dark": "#4A5D51",    // Medium Forest Green
+        gold: "#C2B28F",            // Warm Beige Accent
+        "gold-light": "#D4C7A7",    // Lighter Beige Accent
+        charcoal: "#0D1F16",        // Very Dark Forest Green
+        "warm-white": "#FCFBF8",    // Off-white / Lightest Beige
       },
       fontFamily: {
         cormorant: ["'Cormorant Garamond'", "Georgia", "serif"],

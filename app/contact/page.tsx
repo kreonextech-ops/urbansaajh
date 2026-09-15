@@ -94,8 +94,8 @@ export default function ContactPage() {
                 {
                   icon: <Mail size={16} />,
                   label: "Email",
-                  value: "hello@urbansaajh.com",
-                  href: "mailto:hello@urbansaajh.com",
+                  value: "urbansaajh@gmail.com",
+                  href: "mailto:urbansaajh@gmail.com",
                 },
                 {
                   icon: <Clock size={16} />,

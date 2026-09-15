@@ -49,7 +49,7 @@ export default function Footer() {
               <Instagram size={15} />
             </a>
             <a
-              href="mailto:hello@urbansaajh.com"
+              href="mailto:urbansaajh@gmail.com"
               className="w-10 h-10 border border-espresso-light flex items-center justify-center text-taupe hover:border-gold hover:text-gold transition-all duration-300"
               aria-label="Email"
             >
@@ -97,8 +97,8 @@ export default function Footer() {
             </li>
             <li className="flex gap-3 items-center">
               <Mail size={13} className="text-taupe flex-shrink-0" />
-              <a href="mailto:hello@urbansaajh.com" className="font-dm text-sm text-taupe hover:text-cream transition-colors">
-                hello@urbansaajh.com
+              <a href="mailto:urbansaajh@gmail.com" className="font-dm text-sm text-taupe hover:text-cream transition-colors">
+                urbansaajh@gmail.com
               </a>
             </li>
           </ul>

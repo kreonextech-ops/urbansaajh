@@ -93,8 +93,8 @@ export default function AboutSection() {
         </Reveal>
       </div>
 
-      {/* — Part 2: Founder Section — */}
-      <div className="bg-cream-dark">
+      {/* — Part 2: Founder Section — FOREST GREEN */}
+      <div className="bg-espresso">
         <div className="max-w-7xl mx-auto px-6 lg:px-12 py-24 lg:py-32 grid lg:grid-cols-2 gap-16 items-center">
           {/* Left: Founder Image */}
           <Reveal className="relative order-2 lg:order-1">
@@ -116,24 +116,24 @@ export default function AboutSection() {
               <SectionLabel label="Meet the Founder" className="mb-6" />
             </Reveal>
             <Reveal delay={100}>
-              <h2 className="font-italiana text-5xl lg:text-6xl text-espresso tracking-wide leading-tight mb-8">
+              <h2 className="font-italiana text-5xl lg:text-6xl text-cream tracking-wide leading-tight mb-8">
               A Vision Shaped
               <br />
-              <span className="font-cormorant italic font-light">by Purpose</span>
+              <span className="font-cormorant italic font-light text-gold/80">by Purpose</span>
             </h2>
           </Reveal>
           <Reveal delay={200}>
-            <p className="font-dm text-base text-charcoal/75 leading-relaxed mb-6">
+            <p className="font-dm text-base text-cream/70 leading-relaxed mb-6">
               Urban Saajh was not created to design showpieces. It was created to design homes that feel lived in, loved, and lasting.
             </p>
           </Reveal>
           <Reveal delay={300}>
-            <p className="font-dm text-base text-charcoal/75 leading-relaxed mb-8">
+            <p className="font-dm text-base text-cream/70 leading-relaxed mb-8">
               Tejinder Singh Bhogal believes a home should reflect the rhythm of your life — your routines, your gatherings, your quiet mornings, your ambitious evenings. Not a staged showroom. Not a social media trend. But a space that feels unmistakably yours.
             </p>
           </Reveal>
           <Reveal delay={400}>
-            <div className="grid sm:grid-cols-3 gap-8 mb-10 py-8 border-t border-cream-dark">
+            <div className="grid sm:grid-cols-3 gap-8 mb-10 py-8 border-t border-cream/20">
               {[
                 {
                   title: "MODERN. INTENTIONAL. TIMELESS.",
@@ -152,7 +152,7 @@ export default function AboutSection() {
                   <p className="font-dm text-[10px] tracking-ultra-wide uppercase text-gold mb-2">
                     {item.title}
                   </p>
-                  <p className="font-dm text-xs text-charcoal/70 leading-relaxed">
+                  <p className="font-dm text-xs text-cream/60 leading-relaxed">
                     {item.desc}
                   </p>
                 </div>
@@ -162,7 +162,7 @@ export default function AboutSection() {
             <Reveal delay={500}>
               <Link
                 href="/about"
-                className="group inline-flex items-center gap-3 font-dm text-[11px] tracking-ultra-wide uppercase text-espresso border-b border-espresso pb-1 hover:text-gold hover:border-gold transition-all duration-300"
+                className="group inline-flex items-center gap-3 font-dm text-[11px] tracking-ultra-wide uppercase text-cream border-b border-cream/40 pb-1 hover:text-gold hover:border-gold transition-all duration-300"
               >
                 Read Full Story
                 <ArrowRight size={13} className="group-hover:translate-x-1 transition-transform duration-300" />

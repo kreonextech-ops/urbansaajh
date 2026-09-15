@@ -33,7 +33,7 @@ const jsonLd = {
     "Premium interior design studio serving Bagdogra, Siliguri, Darjeeling, Kurseong, Kalimpong, and Sikkim.",
   url: "https://www.urbansaajh.com",
   telephone: "+917602016708",
-  email: "hello@urbansaajh.com",
+  email: "urbansaajh@gmail.com",
   founder: {
     "@type": "Person",
     name: "Tejinder Singh Bhogal",
