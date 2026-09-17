@@ -21,9 +21,9 @@ export const featuredProjects = [
   },
   {
     id: "featured-2",
-    title: "Panighata Commercial",
+    title: "Jewellery Shop",
     category: "Commercial",
-    location: "Bagdogra",
+    location: "Panighata",
     description: "An elegant commercial retail space designed to elevate the customer experience. Strategic lighting and premium finishes invite clients into a world of refined luxury.",
     coverImage: "/images/projects_new/2/img_1.jpeg",
     images: [
@@ -35,9 +35,9 @@ export const featuredProjects = [
   },
   {
     id: "featured-3",
-    title: "Harekrishna Haven",
+    title: "Bagdogra Site",
     category: "Residential",
-    location: "Bagdogra",
+    location: "Upper Bagdogra",
     description: "A masterclass in residential design, harmonizing contemporary lifestyle needs with timeless elegance through rich material palettes and intelligent space planning.",
     coverImage: "/images/projects_new/3/img_1.jpeg",
     images: [

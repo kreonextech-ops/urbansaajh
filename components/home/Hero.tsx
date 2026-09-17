@@ -5,7 +5,7 @@ import Link from "next/link";
 import { ArrowDownRight } from "lucide-react";
 
 export default function Hero() {
-  const images = ["/images/europa/Dining 1.jpg", "/images/europa/Living 1.jpg"];
+  const images = ["/images/heroimg.jpeg", "/images/heroimg1.jpeg"];
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [loaded, setLoaded] = useState(false);
 

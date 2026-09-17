@@ -9,88 +9,93 @@ export default function AboutSection() {
   return (
     <section id="about" className="bg-warm-white">
       {/* — Part 1: About Us Written — */}
-      <div className="max-w-7xl mx-auto px-6 lg:px-12 py-24 lg:py-32 grid lg:grid-cols-2 gap-16 items-center">
-        {/* Left: Text */}
-        <div>
+      <div className="max-w-7xl mx-auto px-6 lg:px-12 py-24 lg:py-32">
+        <div className="mb-12">
           <Reveal>
             <SectionLabel label="About Urban Saajh" className="mb-6" />
           </Reveal>
           <Reveal delay={100}>
-            <h2 className="font-italiana text-5xl lg:text-6xl text-espresso tracking-wide leading-tight mb-8">
+            <h2 className="font-italiana text-4xl lg:text-5xl text-espresso tracking-wide leading-tight mb-8">
               Where Design
               <br />
               <span className="font-cormorant italic font-light">meets Soul</span>
             </h2>
           </Reveal>
-          <Reveal delay={200}>
-            <p className="font-dm text-base text-charcoal/75 leading-relaxed mb-6">
-              Urban Saajh by Tejinder Singh Bhogal was born from a powerful conviction — that design is not decoration, it is transformation. 
-              We believe a space should not just look beautiful — it should elevate how you live, think, work, and feel.
-            </p>
-          </Reveal>
-          <Reveal delay={300}>
-            <p className="font-dm text-base text-charcoal/75 leading-relaxed mb-8">
-              Rooted in Indian sensibilities yet shaped by contemporary global aesthetics, Urban Saajh creates interiors that are intelligent, refined, and deeply personal. From modern urban residences to statement commercial environments, every space we design carries clarity of vision and strength of character.
-            </p>
-          </Reveal>
-          <Reveal delay={400}>
-            <div className="flex gap-10 mb-6 py-4 border-t border-cream-dark">
-              {[
-                { value: "50+", label: "Projects" },
-                { value: "4+", label: "Years" },
-              ].map((s) => (
-                <div key={s.label}>
-                  <p className="font-cormorant text-3xl text-gold">{s.value}</p>
-                  <p className="font-dm text-[9px] tracking-ultra-wide uppercase text-taupe mt-1">
-                    {s.label}
-                  </p>
-                </div>
-              ))}
-            </div>
-          </Reveal>
-          <Reveal delay={500}>
-            <Link
-              href="/about"
-              className="group inline-flex items-center gap-3 font-dm text-[11px] tracking-ultra-wide uppercase text-espresso border-b border-espresso pb-1 hover:text-gold hover:border-gold transition-all duration-300"
-            >
-              Our Full Story
-              <ArrowRight size={13} className="group-hover:translate-x-1 transition-transform duration-300" />
-            </Link>
-          </Reveal>
         </div>
 
-        {/* Right: Image grid */}
-        <Reveal delay={200} className="relative">
-          <div className="grid grid-cols-2 gap-3 h-[520px]">
-            <div className="relative overflow-hidden row-span-2">
-              <img
-                src="/images/europa/Living 1.jpg"
-                alt="Luxury living room render"
-                className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
-              />
+        <div className="grid lg:grid-cols-2 gap-16 items-center">
+          {/* Images first (Left) */}
+          <Reveal delay={200} className="relative order-1">
+            <div className="grid grid-cols-2 gap-3 h-[520px]">
+              <div className="relative overflow-hidden row-span-2">
+                <img
+                  src="/images/projects_new/1/img_1.jpeg"
+                  alt="Project 1"
+                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
+                />
+              </div>
+              <div className="relative overflow-hidden">
+                <img
+                  src="/images/projects_new/2/img_1.jpeg"
+                  alt="Project 2"
+                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
+                />
+              </div>
+              <div className="relative overflow-hidden">
+                <img
+                  src="/images/projects_new/3/img_1.jpeg"
+                  alt="Project 3"
+                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
+                />
+              </div>
             </div>
-            <div className="relative overflow-hidden">
-              <img
-                src="/images/europa/Dining 1.jpg"
-                alt="Modern dining interior"
-                className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
-              />
+            {/* Decorative tag */}
+            <div className="absolute -bottom-6 -right-4 bg-espresso px-6 py-4 shadow-lg">
+              <p className="font-cormorant text-lg italic text-cream">
+                "Thoughtfully crafted,<br />lovingly designed."
+              </p>
             </div>
-            <div className="relative overflow-hidden">
-              <img
-                src="/images/europa/Master Bedroom 1.jpg"
-                alt="Elegant bedroom design"
-                className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
-              />
-            </div>
+          </Reveal>
+
+          {/* Text second (Right) */}
+          <div className="order-2">
+            <Reveal delay={200}>
+              <p className="font-dm text-base text-charcoal/75 leading-relaxed mb-6">
+                Urban Saajh by Tejinder Singh Bhogal was born from a powerful conviction — that design is not decoration, it is transformation. 
+                We believe a space should not just look beautiful — it should elevate how you live, think, work, and feel.
+              </p>
+            </Reveal>
+            <Reveal delay={300}>
+              <p className="font-dm text-base text-charcoal/75 leading-relaxed mb-8">
+                Rooted in Indian sensibilities yet shaped by contemporary global aesthetics, Urban Saajh creates interiors that are intelligent, refined, and deeply personal. From modern urban residences to statement commercial environments, every space we design carries clarity of vision and strength of character.
+              </p>
+            </Reveal>
+            <Reveal delay={400}>
+              <div className="flex gap-10 mb-6 py-4 border-t border-cream-dark">
+                {[
+                  { value: "50+", label: "Projects" },
+                  { value: "4+", label: "Years" },
+                ].map((s) => (
+                  <div key={s.label}>
+                    <p className="font-cormorant text-3xl text-gold">{s.value}</p>
+                    <p className="font-dm text-[9px] tracking-ultra-wide uppercase text-taupe mt-1">
+                      {s.label}
+                    </p>
+                  </div>
+                ))}
+              </div>
+            </Reveal>
+            <Reveal delay={500}>
+              <Link
+                href="/about"
+                className="group inline-flex items-center gap-3 font-dm text-[11px] tracking-ultra-wide uppercase text-espresso border-b border-espresso pb-1 hover:text-gold hover:border-gold transition-all duration-300"
+              >
+                Our Full Story
+                <ArrowRight size={13} className="group-hover:translate-x-1 transition-transform duration-300" />
+              </Link>
+            </Reveal>
           </div>
-          {/* Decorative tag */}
-          <div className="absolute -bottom-6 -right-4 bg-espresso px-6 py-4 shadow-lg">
-            <p className="font-cormorant text-lg italic text-cream">
-              "Thoughtfully crafted,<br />lovingly designed."
-            </p>
-          </div>
-        </Reveal>
+        </div>
       </div>
 
       {/* — Part 2: Founder Section — FOREST GREEN */}
